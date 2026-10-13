@@ -3,7 +3,7 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
-## [Unreleased]
+## [1.6.0] — 2026-10-12
 
 - **Localization.** The interface follows the macOS system language in English, German, Greek,
   Spanish, French, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Russian, Ukrainian,
