@@ -167,7 +167,7 @@ for this app only; the change applies the next time the app opens.
 
 | Tab | What's in it |
 |---|---|
-| **General** | Appearance (System, Light, Dark), window behaviour (always on top, remember position/size, UI scale), auto-download after analyze, clipboard monitoring, hardware-accelerated encoding, completion notifications and sound |
+| **General** | Appearance (Dark by default, Light, or System), window behaviour (always on top, remember position/size, UI scale), auto-download after analyze, clipboard monitoring, hardware-accelerated encoding, completion notifications and sound |
 | **Network** | Parallel downloads, proxy, aria2c, rate limit |
 | **Cookies** | Cookie policy (when to use them) and which browser to take them from |
 | **Media** | Thumbnail saving/embedding, chapter and subtitle embedding, filename template, modified date, time range, temp folder, config file |

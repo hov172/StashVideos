@@ -11,8 +11,8 @@ the minor number moves for new capability, the patch number for fixes.
   override, applied on the next launch. Translations were machine-generated and reviewed for
   format safety, not by native speakers; corrections are welcome as issues.
 
-- **Appearance.** `Settings ▸ General ▸ Appearance` chooses System, Light or Dark; the default follows
-  the Mac.
+- **Appearance.** `Settings ▸ General ▸ Appearance` chooses Dark (the default), Light or System,
+  which follows the Mac.
 - **Release check.** The app checks the public release feed once a day at launch and shows a banner
   with a link to the release page when a newer Stash Video exists. `Settings ▸ Updates ▸ Check Now`
   checks on demand.
