@@ -49,6 +49,7 @@ repository's release feed.
 
 ```bash
 brew tap hov172/stashvideos https://github.com/hov172/StashVideos
+brew trust hov172/stashvideos     # Homebrew asks this once for any third-party tap
 brew install --cask stash-video
 ```
 
