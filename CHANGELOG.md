@@ -3,6 +3,15 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.6.1] — 2026-10-13
+
+- **Audio only.** `Save Audio Only…` is a button beside Download instead of an item in the
+  `More options` menu. The save dialog now has a Format popup: M4A (AAC), ALAC (Apple Lossless),
+  MP3, Opus, FLAC, WAV or AIFF. AIFF is extracted as WAV and converted by the bundled FFmpeg,
+  since yt-dlp cannot write it directly. The chosen format wins over a hand-edited file
+  extension. With `Embed thumbnail` on, WAV and AIFF keep the artwork as a JPEG beside the file,
+  since yt-dlp cannot embed it in those containers; before, that setting failed the download.
+
 ## [1.6.0] — 2026-10-12
 
 - **Localization.** The interface follows the macOS system language in English, German, Greek,
