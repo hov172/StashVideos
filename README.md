@@ -147,6 +147,11 @@ like a feed.
 
 The clock button lists completed downloads. Click one to load its link back into the app.
 
+### Language
+
+Stash Video follows your Mac's language. The toolbar's globe menu picks a different language
+for this app only; the change applies the next time the app opens.
+
 ## Settings (⌘,)
 
 | Tab | What's in it |

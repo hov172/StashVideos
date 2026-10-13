@@ -3,6 +3,14 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [Unreleased]
+
+- **Localization.** The interface follows the macOS system language in English, German, Greek,
+  Spanish, French, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Russian, Ukrainian,
+  Simplified and Traditional Chinese. A globe menu in the toolbar sets an app-only language
+  override, applied on the next launch. Translations were machine-generated and reviewed for
+  format safety, not by native speakers; corrections are welcome as issues.
+
 ## [1.5.2] — 2026-09-17
 
 - Ship the complete yt-dlp third-party notices and a corrected notice for each bundled helper.
