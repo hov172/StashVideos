@@ -11,6 +11,14 @@ the minor number moves for new capability, the patch number for fixes.
   override, applied on the next launch. Translations were machine-generated and reviewed for
   format safety, not by native speakers; corrections are welcome as issues.
 
+- **Appearance.** `Settings ▸ General ▸ Appearance` chooses System, Light or Dark; the default follows
+  the Mac.
+- **Release check.** The app checks the public release feed once a day at launch and shows a banner
+  with a link to the release page when a newer Stash Video exists. `Settings ▸ Updates ▸ Check Now`
+  checks on demand.
+- **Homebrew.** `brew tap hov172/stashvideos https://github.com/hov172/StashVideos`, then
+  `brew install --cask stash-video` installs the same signed package as the release page.
+
 ## [1.5.2] — 2026-09-17
 
 - Ship the complete yt-dlp third-party notices and a corrected notice for each bundled helper.

@@ -167,13 +167,13 @@ for this app only; the change applies the next time the app opens.
 
 | Tab | What's in it |
 |---|---|
-| **General** | Window behaviour (always on top, remember position/size, UI scale), auto-download after analyze, clipboard monitoring, hardware-accelerated encoding, completion notifications and sound |
+| **General** | Appearance (System, Light, Dark), window behaviour (always on top, remember position/size, UI scale), auto-download after analyze, clipboard monitoring, hardware-accelerated encoding, completion notifications and sound |
 | **Network** | Parallel downloads, proxy, aria2c, rate limit |
 | **Cookies** | Cookie policy (when to use them) and which browser to take them from |
 | **Media** | Thumbnail saving/embedding, chapter and subtitle embedding, filename template, modified date, time range, temp folder, config file |
 | **Feeds** | Background checking on/off and how often |
 | **Browser** | Chromium launch with an unpacked extension and an isolated profile |
-| **Updates** | Check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
+| **Updates** | Check for a newer Stash Video release (also once a day at launch, with a banner linking to the release page), and check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
 
 ## Troubleshooting
 
