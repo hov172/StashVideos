@@ -49,11 +49,11 @@ repository's release feed.
 
 ```bash
 brew tap hov172/stashvideos https://github.com/hov172/StashVideos
-brew trust hov172/stashvideos     # Homebrew asks this once for any third-party tap
+brew trust hov172/stashvideos
 brew install --cask stash-video
 ```
 
-This installs the same signed, notarized package as the release page; `brew upgrade --cask stash-video`
+The `brew trust` step is Homebrew's one-time confirmation for any third-party tap. This installs the same signed, notarized package as the release page; `brew upgrade --cask stash-video`
 picks up new releases and `brew uninstall --cask stash-video` removes the app and the links it made.
 
 ### Uninstalling
