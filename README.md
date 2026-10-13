@@ -45,6 +45,16 @@ Source code is kept in a private repository; this repository hosts the releases,
 notes and licensing material. The in-app **Settings ▸ Updates** check reads this
 repository's release feed.
 
+### Or install with Homebrew
+
+```bash
+brew tap hov172/stashvideos https://github.com/hov172/StashVideos
+brew install --cask stash-video
+```
+
+This installs the same signed, notarized package as the release page; `brew upgrade --cask stash-video`
+picks up new releases and `brew uninstall --cask stash-video` removes the app and the links it made.
+
 ### Uninstalling
 
 Open **StashVideo-Uninstaller.pkg**, inside the app at
