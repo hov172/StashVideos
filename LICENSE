@@ -1,0 +1,26 @@
+Stash Video
+Copyright © 2026 Ayala Solutions. All rights reserved.
+
+This software and its source code are proprietary. No license is granted to
+use, copy, modify, merge, publish, distribute, sublicense, or sell copies of
+this software except as expressly permitted in writing by Ayala Solutions.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+
+This terms above cover Stash Video's own code only.
+
+Stash Video is distributed together with several independent programs that
+carry their own licenses — notably FFmpeg, which is licensed under the GNU
+General Public License version 3. Those terms govern those programs, not this
+one, and nothing above restricts the rights their licenses grant you.
+
+See THIRD-PARTY-LICENSES.md for the full list, the obligations that come with
+it, and how to obtain the corresponding source code.

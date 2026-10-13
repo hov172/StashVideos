@@ -1,0 +1,39 @@
+FFmpeg corresponding-source audit for Stash Video
+
+Binary audited: FFmpeg 9.0.1 from the Martin Riedl macOS release build,
+downloaded from the architecture-specific URLs in
+Scripts/helper-binaries.lock.json. The arm64 and x86_64 binaries report the
+same configure options; both are statically linked builds.
+
+Configure options reported by `ffmpeg -buildconf`:
+--enable-gray --enable-libxml2 --enable-version3 --enable-gpl --enable-openssl
+--enable-libfreetype --enable-fontconfig --enable-libharfbuzz
+--enable-libbluray --enable-libsnappy --enable-libsrt --enable-libvmaf
+--enable-libass --enable-libklvanc --enable-libzimg --enable-libzvbi
+--enable-libaom --enable-libdav1d --enable-libopenh264 --enable-libopenjpeg
+--enable-librav1e --enable-libsvtav1 --enable-libvpx --enable-libvvenc
+--enable-libwebp --enable-libx264 --enable-libx265 --enable-libmp3lame
+--enable-libopus --enable-libvorbis --enable-libtheora
+
+The corresponding build instructions are archived in
+ffmpeg-martin-riedl-build-script.tar.gz. SHA-256:
+025ae571e47d09bc7fe74fceae7f7b0b3b73bf304849133e24d5c4581e592473
+
+Publisher source repository:
+https://git.martin-riedl.de/ffmpeg/build-script
+
+The archive's DEPENDENCY.md identifies the dependency graph. The source
+projects used by this build include FFmpeg, libxml2, OpenSSL, FreeType,
+fontconfig, FriBidi, HarfBuzz, libbluray, snappy, SRT, libvmaf, libass,
+libklvanc, zlib, zimg, zvbi, AOM, dav1d, OpenH264, OpenJPEG, rav1e, SVT-AV1,
+libvpx, vvenc, libwebp, x264, x265, LAME, Opus, Vorbis, Theora, and libogg.
+Their upstream URLs and license terms are maintained by the publisher's build
+script and its dependency metadata. This manifest is an audit record, not a
+replacement for the individual source archives where a component license
+requires source to accompany redistribution.
+
+Audit limitation: the publisher's prebuilt archive does not expose every
+dependency commit or source archive inside the FFmpeg zip. Before a release,
+verify the publisher's source offer and component-specific redistribution terms
+for the exact build, or build the binary from the archived script and pinned
+sources.
