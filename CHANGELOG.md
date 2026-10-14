@@ -3,6 +3,13 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.7.2] — 2026-10-14
+
+- **Clearer yt-dlp update banner.** While a newer `yt-dlp` is being installed automatically,
+  the banner in the main window shows a spinner and "Updating yt-dlp to <version>…" instead
+  of "update available — Open Settings". With automatic installs off, the banner's button is
+  now `Update Now` and installs directly.
+
 ## [1.7.1] — 2026-10-14
 
 - **Update checks on every launch.** The launch checks for a newer Stash Video release and a
