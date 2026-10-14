@@ -14,7 +14,7 @@ re-encoding, and feed subscriptions that download new uploads on their own.
 
 **Do not use Stash Video to download videos without permission from the content owner.**
 
-**Current version: 1.7.0 (build 19).** See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
+**Current version: 1.7.1 (build 20).** See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
 
 ---
 

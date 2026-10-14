@@ -3,6 +3,14 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.7.1] — 2026-10-14
+
+- **Update checks on every launch.** The launch checks for a newer Stash Video release and a
+  newer `yt-dlp` were limited to once a day. They now run each time the app opens while
+  `Settings ▸ Updates ▸ Automatically check for updates` is on; turning it off still disables
+  them, and `Check Now` works either way. A newer `yt-dlp` is still installed automatically
+  only when `Install yt-dlp updates automatically` is on.
+
 ## [1.7.0] — 2026-10-13
 
 - **Self-service updates.** `Settings ▸ Updates ▸ Install Update…` installs a newer release
