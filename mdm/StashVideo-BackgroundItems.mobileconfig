@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.servicemanagement</string>
+			<key>PayloadIdentifier</key>
+			<string>com.ayala.solutions.stashvideo.servicemanagement</string>
+			<key>PayloadUUID</key>
+			<string>7C1F3A2E-9B64-4D0B-8E52-3F1A0C6D2B91</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDisplayName</key>
+			<string>Stash Video background items</string>
+			<key>Rules</key>
+			<array>
+				<dict>
+					<key>RuleType</key>
+					<string>Label</string>
+					<key>RuleValue</key>
+					<string>com.ayala.solutions.stashvideo.updater</string>
+					<key>Comment</key>
+					<string>Approves the Stash Video Updater daemon so standard users can install signed Stash Video releases.</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Pre-approves the Stash Video Updater helper so standard users can install updates without an administrator.</string>
+	<key>PayloadDisplayName</key>
+	<string>Stash Video Background Items</string>
+	<key>PayloadIdentifier</key>
+	<string>com.ayala.solutions.stashvideo.backgrounditems</string>
+	<key>PayloadOrganization</key>
+	<string>Ayala Solutions</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>A4E8D6F1-2C3B-4F7A-9E0D-5B6C7D8E9F10</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

@@ -3,6 +3,16 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.7.0] — 2026-10-13
+
+- **Self-service updates.** `Settings ▸ Updates ▸ Install Update…` installs a newer release
+  through a bundled updater daemon, so standard users can update without an administrator
+  password. An administrator approves `Stash Video Updater` once in `System Settings ▸ General ▸
+  Login Items & Extensions`, or an MDM profile in `mdm/` pre-approves it. The daemon only ever
+  receives a version number: it looks the release up on GitHub, verifies the Developer ID
+  Installer signature and Gatekeeper assessment, and runs the macOS installer. The installer now
+  quits a running Stash Video first and reopens it afterwards.
+
 ## [1.6.1] — 2026-10-13
 
 - **Audio only.** `Save Audio Only…` is a button beside Download instead of an item in the
