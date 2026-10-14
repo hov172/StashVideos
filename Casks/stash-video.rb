@@ -1,6 +1,6 @@
 cask "stash-video" do
-  version "1.7.1,20261014"
-  sha256 "0712a32349441fc62654edecf782fe7a0a116243dcbb02c42ab025ed486fe0b6"
+  version "1.7.2,20261014"
+  sha256 "02ba1acc9adc4fa78ab9a9ad9ee9467dd07ec7cf3fb347219db7cacbec24ed55"
 
   url "https://github.com/hov172/StashVideos/releases/download/v#{version.csv.first}/StashVideo-#{version.csv.first}-#{version.csv.second}.pkg"
   name "Stash Video"
