@@ -56,6 +56,22 @@ brew install --cask stash-video
 The `brew trust` step is Homebrew's one-time confirmation for any third-party tap. This installs the same signed, notarized package as the release page; `brew upgrade --cask stash-video`
 picks up new releases and `brew uninstall --cask stash-video` removes the app and the links it made.
 
+### Updating
+
+`Settings ▸ Updates ▸ Check Now` looks for a newer release; the app also checks once a day at
+launch and shows a banner. **Install Update…** downloads the release's installer and installs it
+through the bundled Stash Video Updater, so a standard user can update without an administrator
+password. It needs a one-time setup: **Set Up Self-Service Updates…** registers the updater, and
+an administrator approves `Stash Video Updater` under `System Settings ▸ General ▸ Login Items &
+Extensions`. On managed Macs, the profile in [`mdm/`](mdm/) pre-approves it so no one has to.
+
+The updater only ever receives a version number. It fetches that release from this project's
+public release page, requires the package to be signed by Stash Video's Developer ID Installer
+certificate and accepted by Gatekeeper, and checks that it is the Stash Video installer for
+exactly that version before running the macOS installer. Installing quits a running Stash Video
+first and reopens it afterwards. Homebrew users can keep using `brew upgrade --cask stash-video`
+instead.
+
 ### Uninstalling
 
 Open **StashVideo-Uninstaller.pkg**, inside the app at
@@ -89,6 +105,12 @@ one downloaded from someone else, right-click ▸ Open the first time, or the ap
 2. Press **Analyze** (or Return). The app fetches the media info; **Stop** aborts a slow one.
 3. Pick a **Format**, **Video**, **Audio**, and optionally a subtitle or chapter.
 4. Choose where it goes, then **Download** — or **Add to Queue** and line up the next link.
+
+### Audio only
+
+**Save Audio Only…** sits beside Download. Its save dialog has a **Format** popup: M4A (AAC),
+ALAC (Apple Lossless), MP3, Opus, FLAC, WAV or AIFF. The popup decides the format even if you
+edit the file extension by hand. AIFF is extracted as WAV and converted by the bundled FFmpeg.
 
 ### Format: the one choice that matters
 
@@ -173,7 +195,7 @@ for this app only; the change applies the next time the app opens.
 | **Media** | Thumbnail saving/embedding, chapter and subtitle embedding, filename template, modified date, time range, temp folder, config file |
 | **Feeds** | Background checking on/off and how often |
 | **Browser** | Chromium launch with an unpacked extension and an isolated profile |
-| **Updates** | Check for a newer Stash Video release (also once a day at launch, with a banner linking to the release page), and check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
+| **Updates** | Check for a newer Stash Video release (also once a day at launch, with a banner), install it without an administrator password once self-service updates are set up, and check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
 
 ## Troubleshooting
 
@@ -189,7 +211,8 @@ sites will be `.mkv`; VLC and IINA play them, QuickTime doesn't.
 <summary><b>There's a stray .jpg next to every video</b></summary>
 
 `Settings ▸ Media ▸ Save thumbnail` is on by default. Turn it off, or turn on **Embed thumbnail**
-to put the artwork inside the file instead.
+to put the artwork inside the file instead. WAV and AIFF cannot hold artwork, so an audio-only
+download in those formats keeps the JPEG beside the file even with **Embed thumbnail** on.
 </details>
 
 <details>
