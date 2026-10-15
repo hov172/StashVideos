@@ -199,7 +199,7 @@ for this app only; the change applies the next time the app opens.
 | **Media** | Thumbnail saving/embedding, chapter and subtitle embedding, filename template, modified date, time range, temp folder, config file |
 | **Feeds** | Background checking on/off and how often |
 | **Browser** | Chromium launch with an unpacked extension and an isolated profile |
-| **Updates** | Check for a newer Stash Video release (also once a day at launch, with a banner), install it without an administrator password once self-service updates are set up, and check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
+| **Updates** | Check for a newer Stash Video release (also at every launch, with a banner), install it without an administrator password once self-service updates are set up, and check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
 
 ## Troubleshooting
 
