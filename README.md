@@ -58,8 +58,8 @@ picks up new releases and `brew uninstall --cask stash-video` removes the app an
 
 ### Updating
 
-`Settings ▸ Updates ▸ Check Now` looks for a newer release; the app also checks once a day at
-launch and shows a banner. **Install Update…** downloads the release's installer and installs it
+`Settings ▸ Updates ▸ Check Now` looks for a newer release; the app also checks at every launch
+(`Settings ▸ Updates ▸ Automatically check for updates`) and shows a banner. **Install Update…** downloads the release's installer and installs it
 through the bundled Stash Video Updater, so a standard user can update without an administrator
 password. It needs a one-time setup: **Set Up Self-Service Updates…** registers the updater, and
 an administrator approves `Stash Video Updater` under `System Settings ▸ General ▸ Login Items &
@@ -71,6 +71,10 @@ certificate and accepted by Gatekeeper, and checks that it is the Stash Video in
 exactly that version before running the macOS installer. Installing quits a running Stash Video
 first and reopens it afterwards. Homebrew users can keep using `brew upgrade --cask stash-video`
 instead.
+
+The same launch check looks for a newer `yt-dlp`. With `Install yt-dlp updates automatically` on,
+the main window shows "Updating yt-dlp to <version>…" with a spinner for the few seconds it takes;
+with it off, the banner offers **Update Now** and installs when you press it.
 
 ### Uninstalling
 
