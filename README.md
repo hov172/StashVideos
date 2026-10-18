@@ -25,6 +25,7 @@ re-encoding, and feed subscriptions that download new uploads on their own.
 | macOS | 14.0 or later |
 | Architecture | Apple Silicon or Intel — the app and every bundled tool are universal |
 | Disk | ~600 MB installed — the helper tools carry both architectures |
+| Windows | 10 version 2004 (19041) or later, x64 or arm64 — see [Windows (test build)](#windows-test-build) |
 
 The app bundles its own `yt-dlp`, `ffmpeg`, `ffprobe` and `deno`, so nothing needs to be
 installed with Homebrew. The installer additionally links `yt-dlp`, `ffmpeg` and `ffprobe` into
@@ -55,6 +56,35 @@ brew install --cask stash-video
 
 The `brew trust` step is Homebrew's one-time confirmation for any third-party tap. This installs the same signed, notarized package as the release page; `brew upgrade --cask stash-video`
 picks up new releases and `brew uninstall --cask stash-video` removes the app and the links it made.
+
+### Windows (test build)
+
+Stash Video for Windows is a separate app with the same features. Until it ships with a public-trust
+signature, the release carries a **test-signed** installer: Windows installs it only after you trust
+the test certificate, and SmartScreen warns about the installer itself. Requires Windows 10 version
+2004 (build 19041) or later, x64 or arm64.
+
+1. Download `StashVideo-Setup-<version>.exe` and `StashVideo-test-signing.cer` from the
+   [latest release](https://github.com/hov172/StashVideos/releases/latest).
+2. Trust the certificate once per PC. In an **elevated** PowerShell (right-click → Run as administrator),
+   from the folder you downloaded to:
+
+   ```powershell
+   Import-Certificate -FilePath .\StashVideo-test-signing.cer -CertStoreLocation Cert:\LocalMachine\TrustedPeople
+   ```
+
+3. Run `StashVideo-Setup-<version>.exe`. When SmartScreen appears, choose **More info → Run anyway**.
+   It installs for the current user with no administrator prompt and bundles `yt-dlp`, `ffmpeg`,
+   `ffprobe` and `deno`; nothing else to install.
+
+Uninstall from **Settings → Apps**. Your settings and history stay in `%LOCALAPPDATA%\StashVideo`.
+To remove the test certificate afterwards, in an elevated PowerShell:
+
+```powershell
+Get-ChildItem Cert:\LocalMachine\TrustedPeople | Where-Object Subject -eq 'CN=Ayala Solutions' | Remove-Item
+```
+
+Verify downloads against the SHA-256 values in the release notes.
 
 ### Updating
 
