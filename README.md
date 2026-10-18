@@ -243,9 +243,6 @@ the next time the app opens.
 | **Browser** | Launch Chrome, Brave, Edge or Chromium (or any executable you pick) with an unpacked extension in an isolated, throwaway profile |
 | **Updates** | Check for a newer Stash Video release (also at every launch, with a banner) and install it — without an administrator password on macOS once self-service updates are set up, with one administrator prompt on Windows — and check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
 
-On Windows, switching Light/Dark restyles the window and Settings at once, but a few rows the app colours
-itself (queue and history rows, banner icons) keep the launch theme until the next start.
-
 ## Troubleshooting
 
 <details>
