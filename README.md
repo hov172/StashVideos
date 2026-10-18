@@ -59,26 +59,21 @@ picks up new releases and `brew uninstall --cask stash-video` removes the app an
 
 ### Windows (test build)
 
-Stash Video for Windows is a separate app with the same features. Until it ships with a public-trust
-signature, the release carries a **test-signed** installer: Windows installs it only after you trust
-the test certificate, and SmartScreen warns about the installer itself. Requires Windows 10 version
-2004 (build 19041) or later, x64 or arm64.
+Stash Video for Windows is a separate app with the same features. The installer is not yet code-signed,
+so SmartScreen warns about it; no certificate import is needed. Requires Windows 10 version 2004
+(build 19041) or later, x64 or arm64.
 
-1. Download `StashVideo-Setup-<version>.exe` and `StashVideo-test-signing.cer` from the
+1. Download `StashVideo-Setup-<version>.exe` from the
    [latest release](https://github.com/hov172/StashVideos/releases/latest).
-2. Trust the certificate once per PC. In an **elevated** PowerShell (right-click → Run as administrator),
-   from the folder you downloaded to:
-
-   ```powershell
-   Import-Certificate -FilePath .\StashVideo-test-signing.cer -CertStoreLocation Cert:\LocalMachine\TrustedPeople
-   ```
-
-3. Run `StashVideo-Setup-<version>.exe`. When SmartScreen appears, choose **More info → Run anyway**.
-   It installs for the current user with no administrator prompt and bundles `yt-dlp`, `ffmpeg`,
-   `ffprobe` and `deno`; nothing else to install.
+2. Run it. When SmartScreen shows "Windows protected your PC", choose **More info → Run anyway**, then
+   approve the administrator prompt. It installs for all users under `C:\Program Files\Stash Video` and
+   bundles `yt-dlp`, `ffmpeg`, `ffprobe` and `deno`; nothing else to install.
 
 Uninstall from **Settings → Apps**. Your settings and history stay in `%LOCALAPPDATA%\StashVideo`.
-To remove the test certificate afterwards, in an elevated PowerShell:
+
+**If you installed an earlier Windows test build** (the one that needed `StashVideo-test-signing.cer`),
+uninstall it from Settings → Apps first; Windows treats it as a different app. Then remove its
+certificate in an elevated PowerShell:
 
 ```powershell
 Get-ChildItem Cert:\LocalMachine\TrustedPeople | Where-Object Subject -eq 'CN=Ayala Solutions' | Remove-Item
