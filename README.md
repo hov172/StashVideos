@@ -6,35 +6,43 @@
 
 <br clear="left">
 
-A native macOS front end for [`yt-dlp`](https://github.com/yt-dlp/yt-dlp). Paste a link, pick a
-quality, get a file — with a parallel download queue, container presets that avoid needless
-re-encoding, and feed subscriptions that download new uploads on their own.
+Native macOS and Windows front ends for [`yt-dlp`](https://github.com/yt-dlp/yt-dlp). Paste a link,
+pick a quality, get a file — with a parallel download queue, container presets that avoid needless
+re-encoding, and feed subscriptions that download new uploads on their own. Both apps share the
+same features, settings and languages; the differences are listed where they matter below.
 
 ## Content Owner Permission Required
 
 **Do not use Stash Video to download videos without permission from the content owner.**
 
-**Current version: 1.7.4 (build 23).** See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
+**Current version: 1.7.4** (macOS build 23; Windows test build 3). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
 
 ---
 
 ## Requirements
 
-| | |
-|---|---|
-| macOS | 14.0 or later |
-| Architecture | Apple Silicon or Intel — the app and every bundled tool are universal |
-| Disk | ~600 MB installed — the helper tools carry both architectures |
-| Windows | 10 version 2004 (19041) or later, x64 or arm64 — see [Windows (test build)](#windows-test-build) |
+| | macOS | Windows |
+|---|---|---|
+| Version | 14.0 or later | 10 version 2004 (build 19041) or later, including 11 |
+| Architecture | Apple Silicon or Intel — the app and every bundled tool are universal | x64 or arm64 — one installer, the native build is installed |
+| Disk | ~600 MB installed — the helper tools carry both architectures | ~340 MB download |
+| Signing | Developer ID signed and notarized | Not yet code-signed — see [Windows](#windows-test-build) |
 
-The app bundles its own `yt-dlp`, `ffmpeg`, `ffprobe` and `deno`, so nothing needs to be
-installed with Homebrew. The installer additionally links `yt-dlp`, `ffmpeg` and `ffprobe` into
+Both apps bundle their own `yt-dlp`, `ffmpeg`, `ffprobe` and `deno`, so nothing else needs to be
+installed. On macOS the installer additionally links `yt-dlp`, `ffmpeg` and `ffprobe` into
 `/usr/local/bin` so they work from Terminal — it never replaces anything already there, so an
 existing Homebrew `ffmpeg` is left alone. The bundled uninstaller removes both the app and those links.
 
 ## Install
 
-> This repository holds Stash Video's releases, release notes and licenses. The app's source is not published.
+> This repository holds Stash Video's releases, release notes and licenses for both platforms. The apps'
+> source is not published. The in-app **Settings ▸ Updates** check on either platform reads this
+> repository's release feed.
+
+Every release carries the macOS package (`StashVideo-<version>-<date>.pkg`) and the Windows installer
+(`StashVideo-Setup-<version>.exe`). Verify downloads against the SHA-256 values in the release notes.
+
+### macOS
 
 **Download the installer** from the [latest release](https://github.com/hov172/StashVideos/releases/latest)
 and open it. It puts Stash Video in `/Applications` with `yt-dlp`, `ffmpeg`, `ffprobe` and
@@ -42,11 +50,7 @@ and open it. It puts Stash Video in `/Applications` with `yt-dlp`, `ffmpeg`, `ff
 opens without a Gatekeeper warning, and it's a universal binary: native on both Apple Silicon
 and Intel.
 
-Source code is kept in a private repository; this repository hosts the releases, release
-notes and licensing material. The in-app **Settings ▸ Updates** check reads this
-repository's release feed.
-
-### Or install with Homebrew
+#### Or install with Homebrew
 
 ```bash
 brew tap hov172/stashvideos https://github.com/hov172/StashVideos
@@ -59,9 +63,8 @@ picks up new releases and `brew uninstall --cask stash-video` removes the app an
 
 ### Windows (test build)
 
-Stash Video for Windows is a separate app with the same features. The installer is not yet code-signed,
-so SmartScreen warns about it; no certificate import is needed. Requires Windows 10 version 2004
-(build 19041) or later, x64 or arm64.
+Stash Video for Windows is a separate app with the same features. Its installer is not yet code-signed,
+so SmartScreen warns about it; no certificate import is needed.
 
 1. Download `StashVideo-Setup-<version>.exe` from the
    [latest release](https://github.com/hov172/StashVideos/releases/latest).
@@ -79,12 +82,19 @@ certificate in an elevated PowerShell:
 Get-ChildItem Cert:\LocalMachine\TrustedPeople | Where-Object Subject -eq 'CN=Ayala Solutions' | Remove-Item
 ```
 
-Verify downloads against the SHA-256 values in the release notes.
+Windows test builds are tried on one Windows 11 x64 PC before release; a clean PC and arm64 hardware
+are not yet part of the checks. Please report anything that fails.
 
 ### Updating
 
 `Settings ▸ Updates ▸ Check Now` looks for a newer release; the app also checks at every launch
-(`Settings ▸ Updates ▸ Automatically check for updates`) and shows a banner. **Install Update…** downloads the release's installer and installs it
+(`Settings ▸ Updates ▸ Automatically check for updates`) and shows a banner.
+
+**On Windows**, the banner's **Install** downloads that release's `StashVideo-Setup-<version>.exe` from this
+repository, closes the app and runs the installer silently — expect one administrator prompt — and the new
+version reopens when it finishes. Running the downloaded Setup.exe yourself does the same thing.
+
+**On macOS**, **Install Update…** downloads the release's installer and installs it
 through the bundled Stash Video Updater, so a standard user can update without an administrator
 password. It needs a one-time setup: **Set Up Self-Service Updates…** registers the updater, and
 an administrator approves `Stash Video Updater` under `System Settings ▸ General ▸ Login Items &
@@ -97,13 +107,17 @@ exactly that version before running the macOS installer. Installing quits a runn
 first and reopens it afterwards. Homebrew users can keep using `brew upgrade --cask stash-video`
 instead.
 
-The same launch check looks for a newer `yt-dlp`. With `Install yt-dlp updates automatically` on,
+On both platforms the same launch check looks for a newer `yt-dlp`. With `Install yt-dlp updates automatically` on,
 the main window shows "Updating yt-dlp to <version>…" with a spinner for the few seconds it takes;
-with it off, the banner offers **Update Now** and installs when you press it.
+with it off, the banner offers **Update Now** and installs when you press it. The download is verified
+against yt-dlp's published `SHA2-256SUMS` before it replaces anything.
 
 ### Uninstalling
 
-Open **StashVideo-Uninstaller.pkg**, inside the app at
+**Windows:** Settings ▸ Apps ▸ Stash Video ▸ Uninstall. It removes the program folder, Start menu entry
+and uninstall entry, and keeps your settings, history and updated `yt-dlp` in `%LOCALAPPDATA%\StashVideo`.
+
+**macOS:** open **StashVideo-Uninstaller.pkg**, inside the app at
 `Stash Video.app/Contents/Resources/`, or download it from the
 [release](https://github.com/hov172/StashVideos/releases/latest). It removes the app, the
 `/usr/local/bin` links and the package receipts — leaving anything it did not install (a
@@ -119,8 +133,9 @@ package.
 ## First run
 
 If `yt-dlp` or `ffmpeg` can't be found, the app opens to a **Setup** screen and offers to locate
-them. It looks in Application Support first (where in-app updates land), then the bundled copies,
-then Homebrew and your `PATH` — so point it somewhere else only if you keep them elsewhere.
+them. It looks where in-app updates land first (Application Support on macOS,
+`%LOCALAPPDATA%\StashVideo\bin` on Windows), then the bundled copies, then Homebrew and your `PATH` —
+so point it somewhere else only if you keep them elsewhere.
 
 macOS will not open a build it can't verify. For a locally built copy that is not an issue; for
 one downloaded from someone else, right-click ▸ Open the first time, or the app must be notarized.
@@ -150,7 +165,7 @@ minutes.
 |---|---|---|
 | **Auto · MP4 preferred** *(default)* | Picks the best H.264 + AAC pair the site has, so the result is an MP4 from a straight merge. Falls back to MKV where a site has no H.264. | **Never** |
 | **MP4** | Always MP4, at the highest resolution available — re-encoding when the source isn't already H.264/AAC. | Often |
-| **MKV** | Highest resolution, always a lossless merge. Needs VLC or IINA rather than QuickTime. | Never |
+| **MKV** | Highest resolution, always a lossless merge. Plays in VLC, IINA or Windows' Media Player rather than QuickTime. | Never |
 | **WebM** | Keeps VP9/AV1 + Opus as-is. | For anything else |
 | **Original** | Whatever yt-dlp produces. No container forced. | Never |
 
@@ -211,20 +226,25 @@ The clock button lists completed downloads. Click one to load its link back into
 
 ### Language
 
-Stash Video follows your Mac's language. The toolbar's globe menu picks a different language
-for this app only; the change applies the next time the app opens.
+Stash Video follows your system language (14 languages: English, German, Greek, Spanish, French,
+Italian, Japanese, Korean, Polish, Portuguese (Brazil), Russian, Ukrainian, Simplified and Traditional
+Chinese). The toolbar's globe menu picks a different language for this app only; the change applies
+the next time the app opens.
 
-## Settings (⌘,)
+## Settings (⌘, on macOS, Ctrl+, on Windows)
 
 | Tab | What's in it |
 |---|---|
-| **General** | Appearance (Dark by default, Light, or System), window behaviour (always on top, remember position/size, UI scale), auto-download after analyze, clipboard monitoring, hardware-accelerated encoding, completion notifications and sound |
+| **General** | Appearance (Dark by default, Light, or System), window behaviour (always on top, remember position/size; UI scale on macOS), auto-download after analyze, clipboard monitoring, hardware-accelerated encoding (VideoToolbox on macOS; NVENC, Quick Sync or AMF on Windows, whichever the PC has), completion notifications and sound |
 | **Network** | Parallel downloads, proxy, aria2c, rate limit |
-| **Cookies** | Cookie policy (when to use them) and which browser to take them from |
+| **Cookies** | Cookie policy (when to use them) and which browser to take them from (Chrome, Edge, Firefox, Brave, Vivaldi, Opera or Chromium) |
 | **Media** | Thumbnail saving/embedding, chapter and subtitle embedding, filename template, modified date, time range, temp folder, config file |
 | **Feeds** | Background checking on/off and how often |
-| **Browser** | Chromium launch with an unpacked extension and an isolated profile |
-| **Updates** | Check for a newer Stash Video release (also at every launch, with a banner), install it without an administrator password once self-service updates are set up, and check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
+| **Browser** | Launch Chrome, Brave, Edge or Chromium (or any executable you pick) with an unpacked extension in an isolated, throwaway profile |
+| **Updates** | Check for a newer Stash Video release (also at every launch, with a banner) and install it — without an administrator password on macOS once self-service updates are set up, with one administrator prompt on Windows — and check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
+
+On Windows, switching Light/Dark restyles the window and Settings at once, but a few rows the app colours
+itself (queue and history rows, banner icons) keep the launch theme until the next start.
 
 ## Troubleshooting
 
@@ -255,7 +275,9 @@ merged, and the fragments are deleted. That's also why there are two progress ba
 <summary><b>"This video requires sign-in cookies"</b></summary>
 
 Pick the browser you're signed in with under `Settings ▸ Cookies` (or the toolbar's key menu) and
-analyze again. macOS may ask for Keychain permission the first time.
+analyze again. macOS may ask for Keychain permission the first time. On Windows, recent Chrome
+versions lock their cookie store so that yt-dlp cannot read it; Firefox, or Edge or Brave, works when
+Chrome does not.
 </details>
 
 <details>
@@ -288,8 +310,10 @@ component like `/37/…` and yield only a few seconds of media.
 
 Stash Video shells out to `yt-dlp` and `ffmpeg` rather than reimplementing them, so it supports
 whatever the installed `yt-dlp` supports (~1,750 extractors) and improves whenever yt-dlp does.
-The app uses Developer ID distribution with App Sandbox disabled for its current helper,
-browser-cookie, and filesystem access design.
+The Mac app uses Developer ID distribution with App Sandbox disabled for its current helper,
+browser-cookie, and filesystem access design. The Windows app is a WinUI 3 desktop app installed
+the ordinary way under Program Files (no MSIX or Store packaging), and writes only to
+`%LOCALAPPDATA%\StashVideo`.
 
 Beyond a plain wrapper, it adds browser-cookie retries for sign-in walls, browser impersonation
 for bot blocks, embedded-player resolution for wrapper pages, checksum-verified in-app `yt-dlp`
@@ -308,4 +332,6 @@ so their terms govern them and not this app.
 FFmpeg's GPL carries real obligations if you redistribute the installer yourself — the
 license text must travel with the binary, and corresponding source must be available.
 [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md) spells out both, and the full texts are in
-[`licenses/`](licenses/) and inside the installed app at `Contents/Resources/licenses`.
+[`licenses/`](licenses/) and inside the installed app — `Contents/Resources/licenses` on macOS,
+`Assets\licenses` under `C:\Program Files\Stash Video` on Windows. Each release also attaches the
+exact FFmpeg source the Windows build was made from.
