@@ -3,6 +3,12 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.7.4] — 2026-10-17
+
+- **Paste from Clipboard.** The empty state before the first analysis has a `Paste from
+  Clipboard` button. It puts the clipboard text in the URL field and analyzes it, matching the
+  Windows app. An empty clipboard leaves the field as it is. Translated into all 13 languages.
+
 ## [1.7.3] — 2026-10-14
 
 - **Stash Video update banner shows progress.** While `Install` is running through the
