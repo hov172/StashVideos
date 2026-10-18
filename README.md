@@ -13,7 +13,16 @@ same features, settings and languages; the differences are listed where they mat
 
 ## Content Owner Permission Required
 
-**Do not use Stash Video to download videos without permission from the content owner.**
+**Use Stash Video only to download your own videos, or videos whose owner has given you permission.**
+Downloading content without the rights holder's permission may infringe copyright and breach the
+terms of service of the site it comes from. You are responsible for how you use this software.
+
+- Stash Video does not remove or bypass DRM or any other copy protection, and must not be used to try.
+- Respect each site's terms of service and any robots or rate limits it publishes.
+- Stash Video is not affiliated with, endorsed by or sponsored by YouTube, TikTok or any other site
+  it can download from, nor by the yt-dlp, FFmpeg or Deno projects.
+- The software is provided "as is", without warranty of any kind; see [LICENSE](LICENSE). Ayala
+  Solutions is not liable for any misuse or for content obtained with it.
 
 **Current version: 1.7.4** (macOS build 23; Windows test build 3). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
 
