@@ -3,6 +3,14 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.9.1] — 2026-10-20
+
+- **Analyze is four times faster.** Analyzing a YouTube link took 15–19 seconds in the app while
+  yt-dlp itself needed 3; the rest was the app reading yt-dlp's megabyte of video information one
+  slow step at a time, scanning it again for error messages, and probing every dubbed-language
+  audio track with ffprobe. The same link now analyzes in about 4 seconds, and child tools keep
+  normal priority while the window is in the background.
+
 ## [1.9.0] — 2026-10-20
 
 - **Sign-in window.** `Settings ▸ Cookies ▸ Sign in…` opens a browser inside Stash Video. Sign in
