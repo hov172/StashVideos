@@ -1,6 +1,6 @@
 cask "stash-video" do
-  version "1.7.4,20261017"
-  sha256 "77418b698fb9e71a9ade48b591f41fd1c1cda8945379bbdb545069335fb4bce5"
+  version "1.8.0,20261019"
+  sha256 "1e08047b7d9b2388dcf8531f75469290cb267f7ecac912ac55bba47d5aa8e3a6"
 
   url "https://github.com/hov172/StashVideos/releases/download/v#{version.csv.first}/StashVideo-#{version.csv.first}-#{version.csv.second}.pkg"
   name "Stash Video"
@@ -20,26 +20,26 @@ cask "stash-video" do
     end
   end
 
-  depends_on macos: :sonoma
+  depends_on macos: ">= :sonoma"
 
   pkg "StashVideo-#{version.csv.first}-#{version.csv.second}.pkg"
 
   # The installer links yt-dlp, ffmpeg and ffprobe into /usr/local/bin only when nothing is
   # there already; remove just the links that point into this app, never a user's own tools.
   uninstall script:  {
-              executable: "/bin/sh",
-              args:       ["-c", <<~SH.strip],
-                for t in yt-dlp ffmpeg ffprobe; do
-                  l="/usr/local/bin/$t"
-                  [ -L "$l" ] || continue
-                  case "$(readlink "$l")" in
-                    */Stash Video.app/Contents/Resources/bin/*) rm -f "$l" ;;
-                  esac
-                done
-                exit 0
-              SH
-              sudo:       true,
-            },
+                       executable: "/bin/sh",
+                       args:       ["-c", <<~SH.strip],
+                         for t in yt-dlp ffmpeg ffprobe; do
+                           l="/usr/local/bin/$t"
+                           [ -L "$l" ] || continue
+                           case "$(readlink "$l")" in
+                             */Stash\ Video.app/Contents/Resources/bin/*) rm -f "$l" ;;
+                           esac
+                         done
+                         exit 0
+                       SH
+                       sudo:       true,
+                     },
             pkgutil: "com.ayala.solutions.yt-dlp-gui-Macos.pkg",
             delete:  "/Applications/Stash Video.app"
 
