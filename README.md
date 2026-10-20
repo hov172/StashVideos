@@ -24,7 +24,7 @@ terms of service of the site it comes from. You are responsible for how you use 
 - The software is provided "as is", without warranty of any kind; see [LICENSE](LICENSE). Ayala
   Solutions is not liable for any misuse or for content obtained with it.
 
-**Current version: 1.9.2** (macOS build 27). Windows 1.9.2 is coming; the current Windows test build is 1.9.1 (test build 1). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
+**Current version: 1.9.2** (macOS build 27, Windows test build 1). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
 
 ---
 
@@ -72,12 +72,12 @@ picks up new releases and `brew uninstall --cask stash-video` removes the app an
 
 ### Windows (test build)
 
-Stash Video for Windows is a separate app with the same features. **Windows 1.9.2 is coming:** the
-1.9.x features (sign-in window, pick the video from the page, send-to-app, visual trim with preview,
-inline video password, support reports) are merged and will ship as the next Windows test build; until
-then the latest Windows installer is 1.7.4, found under the
-[v1.7.4 release](https://github.com/hov172/StashVideos/releases/tag/v1.7.4). The installer is not yet
-code-signed, so SmartScreen warns about it; no certificate import is needed.
+Stash Video for Windows is a separate app with the same features. The Windows 1.9.2 installer
+(`StashVideo-Setup-1.9.2.exe`, test build 1) is on the same
+[v1.9.2 release](https://github.com/hov172/StashVideos/releases/tag/v1.9.2) as the Mac package, with
+the 1.9.x features (sign-in window, pick the video from the page, send-to-app, visual trim with
+preview, inline video password, support reports). The installer is not yet code-signed, so
+SmartScreen warns about it; no certificate import is needed.
 
 1. Download `StashVideo-Setup-<version>.exe` from the
    [latest release](https://github.com/hov172/StashVideos/releases/latest).
