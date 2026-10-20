@@ -3,6 +3,22 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.9.2] — 2026-10-20
+
+Ported from Stash Video for Windows 1.9.2.
+
+- **Clear.** An X on the video card and Esc dismiss the analyzed video and its link, back to the
+  empty view; off while analyzing or while a direct download shows its progress.
+- **Trim preview prefers HLS.** The preview takes the sharpest HLS stream up to 480p and the HLS
+  twin of the chosen audio track, because a single YouTube DASH request slows to playback speed
+  after the first few megabytes and long ranges hit the 90-second render timeout.
+- **Preview stops.** The Preview toggle reads Stop while open; Stop, Reset or any trim change
+  stops playback, unloads the clip and cancels a pending render.
+- **Zoom.** `View ▸ Zoom In / Zoom Out / Actual Size` (⌘+, ⌘-, ⌘0) step `Settings ▸ Scale`, and
+  the scaled layout now keeps the column's width instead of spilling out of it.
+- **Wider page.** The reading column widens to 1400 points on large windows, and the preview
+  player grows to 540 points with transport controls.
+
 ## [1.9.1] — 2026-10-20
 
 - **Analyze is four times faster.** Analyzing a YouTube link took 15–19 seconds in the app while
