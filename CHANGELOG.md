@@ -3,6 +3,24 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.8.0] — 2026-10-19
+
+- **Sign-in-walled pages and password-protected videos.** Portals that serve a logged-out page
+  instead of redirecting to a login (campus intranets, LMSes) are retried once with the browser's
+  sign-in cookies, and the embedded-player lookup runs again with them. A Vimeo player iframe is
+  recognised, the embedding page is sent as the referer on analyze and download (embed-only
+  Vimeo videos refuse requests without it), and `Settings ▸ Cookies` gains a **Video password**
+  field for videos that ask for one before playing.
+- **Safari page reading.** Safari does not reliably write a fresh login to the cookie store
+  yt-dlp reads. With Safari selected, Stash Video now reads the signed-in page straight from
+  the open Safari tab when the fetched page has no player. macOS asks once to allow Stash Video
+  to control Safari.
+- **Cookie failures explain what to fix.** Instead of "try a different browser", the error
+  names the browser and the cause: cookie database not found, a Keychain "Safe Storage" prompt
+  that needs *Always Allow*, Safari blocked by Full Disk Access, or not being signed in from a
+  normal window on the default profile. The README lists what each browser needs.
+- Translated into all 13 languages.
+
 ## [1.7.4] — 2026-10-17
 
 - **Paste from Clipboard.** The empty state before the first analysis has a `Paste from
