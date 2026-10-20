@@ -22,5 +22,4 @@ The `send-to-stash-video/` folder is a Manifest V3 extension; its toolbar button
 
 ## Safari
 
-There is no Safari extension yet: use the bookmarklet above. The sources for the planned Safari Web
-Extension target and the steps to add it to the Xcode project are in [safari/README.md](safari/README.md).
+There is no Safari extension yet: use the bookmarklet above.
