@@ -278,7 +278,7 @@ the next time the app opens.
 
 | Tab | What's in it |
 |---|---|
-| **General** | Appearance (Dark by default, Light, or System), window behaviour (always on top, remember position/size; UI scale on macOS), auto-download after analyze, clipboard monitoring, hardware-accelerated encoding (VideoToolbox on macOS; NVENC, Quick Sync or AMF on Windows, whichever the PC has), completion notifications and sound |
+| **General** | Appearance (Dark by default, Light, or System), window behaviour (always on top, remember position/size, UI scale with ⌘/Ctrl +, − and 0), auto-download after analyze, clipboard monitoring, hardware-accelerated encoding (VideoToolbox on macOS; NVENC, Quick Sync or AMF on Windows, whichever the PC has), completion notifications and sound |
 | **Network** | Parallel downloads, proxy, aria2c, rate limit |
 | **Cookies** | Cookie policy (when to use them), **Sign in…** for the app's own sign-in window, the video password, and which browser to take cookies from (Chrome, Edge, Firefox, Brave, Vivaldi, Opera or Chromium) |
 | **Media** | Thumbnail saving/embedding, chapter and subtitle embedding, filename template, modified date, time range, temp folder, config file |
