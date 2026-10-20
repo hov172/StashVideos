@@ -163,6 +163,36 @@ one downloaded from someone else, right-click ▸ Open the first time, or the ap
 3. Pick a **Format**, **Video**, **Audio**, and optionally a subtitle or chapter.
 4. Choose where it goes, then **Download** — or **Add to Queue** and line up the next link.
 
+### Send a page from your browser
+
+Both apps register a `stashvideo://open?url=…` link, so a browser can hand Stash Video the page you are
+on. The no-install way works in every browser: add a bookmark with this as its URL and click it on any
+page (the first time, the browser asks whether to open Stash Video; allow it).
+
+```
+javascript:location.href='stashvideo://open?url='+encodeURIComponent(location.href)
+```
+
+Chrome and Firefox users can instead load the toolbar extension in
+[`extensions/send-to-stash-video`](https://github.com/hov172/StashVideos/tree/main/extensions/send-to-stash-video).
+Safari users: use the bookmarklet for now (a Safari extension is planned).
+
+### Sign in inside the app, and pick the video from the page
+
+`Settings ▸ Cookies ▸ Sign in…` opens a browser window inside Stash Video. Sign in to the portal
+there and press **Done**: the session is saved as the **Stash Video sign-in window** cookie source,
+with no browser cookie export or permission prompts, and it stays signed in next time. While a page
+plays in that window, Stash Video watches what the player loads and offers the video it found with one
+**Download** button. DRM-protected streams are reported as protected and are never downloaded.
+
+### Trim a clip
+
+Press **Trim** on the media card after analyzing. A filmstrip appears with two handles; drag them to
+the part you want. The cut parts are dimmed, the **Start** and **End** pictures show the exact frames
+at each handle, and **Preview** loops a short clip of the selected range, rendered locally with the
+audio track you picked for the download, so it works on every site, including audio-only ones.
+**Reset** clears the range. The range is applied to the download.
+
 ### Audio only
 
 **Save Audio Only…** sits beside Download. Its save dialog has a **Format** popup: M4A (AAC),
@@ -250,7 +280,7 @@ the next time the app opens.
 |---|---|
 | **General** | Appearance (Dark by default, Light, or System), window behaviour (always on top, remember position/size; UI scale on macOS), auto-download after analyze, clipboard monitoring, hardware-accelerated encoding (VideoToolbox on macOS; NVENC, Quick Sync or AMF on Windows, whichever the PC has), completion notifications and sound |
 | **Network** | Parallel downloads, proxy, aria2c, rate limit |
-| **Cookies** | Cookie policy (when to use them) and which browser to take them from (Chrome, Edge, Firefox, Brave, Vivaldi, Opera or Chromium) |
+| **Cookies** | Cookie policy (when to use them), **Sign in…** for the app's own sign-in window, the video password, and which browser to take cookies from (Chrome, Edge, Firefox, Brave, Vivaldi, Opera or Chromium) |
 | **Media** | Thumbnail saving/embedding, chapter and subtitle embedding, filename template, modified date, time range, temp folder, config file |
 | **Feeds** | Background checking on/off and how often |
 | **Browser** | Launch Chrome, Brave, Edge or Chromium (or any executable you pick) with an unpacked extension in an isolated, throwaway profile |
@@ -285,9 +315,21 @@ merged, and the fragments are deleted. That's also why there are two progress ba
 <summary><b>"This video requires sign-in cookies"</b></summary>
 
 Pick the browser you're signed in with under `Settings ▸ Cookies` (or the toolbar's key menu) and
-analyze again. macOS may ask for Keychain permission the first time. On Windows, recent Chrome
-versions lock their cookie store so that yt-dlp cannot read it; Firefox, or Edge or Brave, works when
-Chrome does not.
+analyze again. macOS may ask for Keychain permission the first time. On Windows, recent Chrome and
+Edge versions lock their cookie store so that yt-dlp cannot read it; Firefox or Brave works when they
+do not. When no browser works, `Settings ▸ Cookies ▸ Sign in…` signs in inside the app and saves the
+session (see [Sign in inside the app](#sign-in-inside-the-app-and-pick-the-video-from-the-page)).
+Password-protected videos show a password field with **Retry** right in the error. Vimeo pages that
+demand a login are analyzed through Vimeo's public player page automatically.
+</details>
+
+<details>
+<summary><b>Reporting a problem or requesting a site</b></summary>
+
+**Help ▸ Report a Problem…** and **Help ▸ Request a Site…** (and the **Report…** button on an error)
+open a prefilled issue in this repository with the app and yt-dlp versions, the link (query and
+fragment stripped) and the error text. Video passwords and proxy credentials are removed before
+anything leaves the app; review the page before you submit it.
 </details>
 
 <details>
