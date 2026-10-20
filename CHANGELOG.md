@@ -3,6 +3,33 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.9.0] — 2026-10-20
+
+- **Sign-in window.** `Settings ▸ Cookies ▸ Sign in…` opens a browser inside Stash Video. Sign in
+  to a portal there, press Done, and the session is saved as the new **Stash Video sign-in window**
+  cookie source, with no browser cookie export, Keychain prompt, or Full Disk Access needed. Every
+  yt-dlp run gets its own private copy of the saved session.
+- **Pick the video from the page.** While a page plays in the sign-in window, Stash Video watches
+  what the player loads and offers the video it found (player page, stream manifest, or file) with
+  one Download button. DRM-protected streams are reported as protected and never downloaded.
+- **Send a page to Stash Video.** The `stashvideo://open?url=…` link scheme opens and analyzes a
+  link from anywhere; the README has a bookmarklet, and `extensions/send-to-stash-video/` holds a
+  Chrome and Firefox extension that sends the current tab.
+- **Visual trim with preview.** A **Trim** toggle on the media card opens a filmstrip of the video
+  with two handles; the cut parts are dimmed, the Start and End frames show the exact cut, and
+  **Preview** loops a locally rendered clip of the selected range, with the audio track chosen for
+  the download, on every site including audio-only ones. The range is applied to the download.
+- **Password-protected videos ask inline.** When a video needs a password, the error shows a
+  password field and Retry instead of sending you to Settings.
+- **Vimeo without an account.** Vimeo pages that now demand a login are analyzed through the public
+  player page instead, so public videos download at full quality anonymously.
+- **Report a Problem… / Request a Site…** in the Help menu and on errors open a prefilled GitHub
+  issue with versions, the link, and the error, with passwords and proxy credentials removed.
+- Sign-in cookies are remembered per site instead of for the whole session, so one portal sign-in
+  no longer slows every later YouTube download; the bundled ffmpeg can verify TLS on trimmed HLS
+  downloads; tests no longer write to the real download history.
+- Translated into all 13 languages.
+
 ## [1.8.0] — 2026-10-19
 
 - **Sign-in-walled pages and password-protected videos.** Portals that serve a logged-out page
