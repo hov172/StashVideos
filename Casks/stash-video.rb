@@ -20,7 +20,7 @@ cask "stash-video" do
     end
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   pkg "StashVideo-#{version.csv.first}-#{version.csv.second}.pkg"
 
