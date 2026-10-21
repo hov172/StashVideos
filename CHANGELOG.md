@@ -3,6 +3,27 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.9.3] — 2026-10-20
+
+Sign-in is one click away, and portal videos no longer need a second try.
+
+- **Sign in… in the toolbar.** The account menu (the person-with-key icon) has a Sign in… item
+  under the cookie-source picker, the same action as Settings › Cookies, so a site that needs a
+  login is reachable from the URL field instead of a trip into Settings or a failed analyze.
+- **Sign-in offered on unknown-site failures.** A timeout or 403 from yt-dlp's generic extractor on a
+  site it has no extractor for now shows the Sign in… button with the hint "If this page needs a
+  login, use Sign in…, then analyze again." Known sites (YouTube, Vimeo, …) keep the plain error.
+- **Clearer sign-in checklist.** "Open Sign in… again" became "Use Sign in…, finish logging in until
+  the site shows you as signed in, click Done, then analyze again", so a first-time user is not
+  told they already did it.
+- **Fixed: embed-only Vimeo after a password.** Entering the video password for a stream captured in
+  the sign-in window dropped the page referer, so Vimeo refused with "Cannot download embed-only
+  video without embedding URL" until the Download button was pressed a second time. The referer now
+  survives any re-analyze of the same captured URL.
+- **Homebrew.** The cask's `depends_on macos` uses the symbol form Homebrew asks for, and its
+  uninstall script quotes the app path (the old one failed `brew upgrade` with a shell syntax
+  error; 1.6.0 installs need the one-time workaround in the public README).
+
 ## [1.9.2] — 2026-10-20
 
 Ported from Stash Video for Windows 1.9.2.
