@@ -33,7 +33,7 @@ cask "stash-video" do
                            l="/usr/local/bin/$t"
                            [ -L "$l" ] || continue
                            case "$(readlink "$l")" in
-                             */Stash\ Video.app/Contents/Resources/bin/*) rm -f "$l" ;;
+                             *"/Stash Video.app/Contents/Resources/bin/"*) rm -f "$l" ;;
                            esac
                          done
                          exit 0
