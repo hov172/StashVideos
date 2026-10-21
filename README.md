@@ -70,6 +70,11 @@ brew install --cask stash-video
 The `brew trust` step is Homebrew's one-time confirmation for any third-party tap. This installs the same signed, notarized package as the release page; `brew upgrade --cask stash-video`
 picks up new releases and `brew uninstall --cask stash-video` removes the app and the links it made.
 
+If you installed **1.6.0** with Homebrew, `brew upgrade` fails once with `syntax error near unexpected
+token` from the uninstall script. That release's cask had a quoting bug that Homebrew froze into the
+install receipt, so the fixed cask cannot repair it. Run `brew uninstall --cask stash-video` (ignore
+the same error if it appears), then `brew install --cask stash-video`; later upgrades work normally.
+
 ### Windows (test build)
 
 Stash Video for Windows is a separate app with the same features. The Windows 1.9.2 installer
