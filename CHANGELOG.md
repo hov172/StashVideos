@@ -5,7 +5,8 @@ the minor number moves for new capability, the patch number for fixes.
 
 ## [1.9.3] — 2026-10-20
 
-Sign-in is one click away, and portal videos no longer need a second try.
+Sign-in is one click away, and portal videos no longer need a second try. Windows 1.9.3 ships the
+same changes and is on the same release; its error message gains the Sign in… link the Mac already had.
 
 - **Sign in… in the toolbar.** The account menu (the person-with-key icon) has a Sign in… item
   under the cookie-source picker, the same action as Settings › Cookies, so a site that needs a
