@@ -3,6 +3,20 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.9.4] — 2026-10-21
+
+The sign-in window's Done button now does what first-time users expect. Windows 1.9.4 carries the
+same change (there the question comes when the window closes); its build follows.
+
+- **Done offers the found video.** When the sign-in window has spotted a stream on the page, Done
+  asks "Download the video found on this page?": Download takes it with this sign-in and the page
+  as referer; Just save the sign-in keeps the login for later. Before, Done only saved cookies, and
+  the video was only reachable through the banner's Download button.
+- **Done questions a logged-out session.** If nothing changed in the site's cookies since the page
+  first loaded, which is what a portal looks like before you log in, Done asks "The site hasn't
+  signed you in yet." with Keep signing in and Save anyway. Cookies set by a single sign-on page on
+  another domain don't count; a new cookie or a rotated session ID on the site does.
+
 ## [1.9.3] — 2026-10-20
 
 Sign-in is one click away, and portal videos no longer need a second try. Windows 1.9.3 ships the

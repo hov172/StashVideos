@@ -24,7 +24,7 @@ terms of service of the site it comes from. You are responsible for how you use 
 - The software is provided "as is", without warranty of any kind; see [LICENSE](LICENSE). Ayala
   Solutions is not liable for any misuse or for content obtained with it.
 
-**Current version: 1.9.3** (macOS build 28 and Windows 1.9.3, both on the same release). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
+**Current version: 1.9.4** (macOS build 29). Windows 1.9.4 is coming; the current Windows release is 1.9.3. See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
 
 ---
 
@@ -87,7 +87,7 @@ Stash Video for Windows is a separate app with the same features. The Windows 1.
 [v1.9.3 release](https://github.com/hov172/StashVideos/releases/tag/v1.9.3) as the Mac package, with
 the 1.9.x features (sign-in window, pick the video from the page, send-to-app, visual trim with
 preview, inline video password, support reports) and, new in 1.9.3, Sign in… in the toolbar's cookie
-menu and in the error message. It installs over 1.9.2 or earlier in place. The installer is not yet
+menu and in the error message. It installs over earlier versions in place. The installer is not yet
 code-signed, so SmartScreen warns about it; no certificate import is needed. Verify the download
 against `SHA256SUMS-<version>-windows.txt` on the release.
 
