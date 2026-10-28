@@ -5,8 +5,8 @@ the minor number moves for new capability, the patch number for fixes.
 
 ## [1.9.5] — 2026-10-27
 
-macOS. LinkedIn Learning works again end to end: sign-in, thumbnail, and trim. The same fixes are
-on the Windows main branch and ship in Windows 1.9.5.
+macOS and Windows. LinkedIn Learning works again end to end: sign-in, thumbnail, and trim. The
+Windows installer shipped the same day with the same fixes and a maximize-scaling fix.
 
 - **Fixed: yt-dlp's cookies-only login wall.** yt-dlp now words LinkedIn Learning's login wall as
   "only available for registered users. Use --cookies-from-browser or --cookies for the
