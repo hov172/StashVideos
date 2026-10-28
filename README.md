@@ -24,7 +24,7 @@ terms of service of the site it comes from. You are responsible for how you use 
 - The software is provided "as is", without warranty of any kind; see [LICENSE](LICENSE). Ayala
   Solutions is not liable for any misuse or for content obtained with it.
 
-**Current version: 1.9.4** (macOS build 29). Windows 1.9.4 is coming; the current Windows release is 1.9.3. See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
+**Current version: 1.9.5** (macOS build 30). The current Windows release is 1.9.4; Windows 1.9.5 is coming. See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
 
 ---
 

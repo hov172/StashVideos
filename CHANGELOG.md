@@ -3,6 +3,24 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.9.5] — 2026-10-27
+
+macOS. LinkedIn Learning works again end to end: sign-in, thumbnail, and trim. The same fixes are
+on the Windows main branch and ship in Windows 1.9.5.
+
+- **Fixed: yt-dlp's cookies-only login wall.** yt-dlp now words LinkedIn Learning's login wall as
+  "only available for registered users. Use --cookies-from-browser or --cookies for the
+  authentication", which the sign-in detector did not recognise. The app showed the raw error and
+  never retried with cookies or offered Sign in…. It now retries, and opens the sign-in window when
+  you haven't signed in.
+- **Fixed: trim previews on extension-less HLS.** LinkedIn's HLS segment URLs have no file extension,
+  which ffmpeg 7.1 and later refuse by default, so the filmstrip, handle frames and preview clip all
+  failed. The app now passes `-extension_picky 0` for HLS inputs only.
+- **Trimmer opens with its frames.** Opening Trim grabs the start and end frames straight away
+  instead of leaving them blank until the first drag.
+- **Thumbnail for sites with none.** When a site gives yt-dlp no thumbnail (LinkedIn Learning), the
+  header card showed a spinner that never ended. It now shows a frame grabbed from the video.
+
 ## [1.9.4] — 2026-10-21
 
 The sign-in window's Done button now does what first-time users expect. Windows 1.9.4 carries the
