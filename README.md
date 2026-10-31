@@ -80,6 +80,19 @@ rm -rf "$(brew --prefix)/Caskroom/stash-video"
 brew install --cask stash-video
 ```
 
+#### Or deploy with AutoPkg (Munki, Jamf Pro, Intune)
+
+Recipes for managed fleets live in [hov172/autopkg-recipes](https://github.com/hov172/autopkg-recipes):
+
+```bash
+autopkg repo-add hov172/autopkg-recipes
+autopkg run -v StashVideo.munki   # or StashVideo.jamf / StashVideo.intune
+```
+
+They pull the same signed, notarized package from this repository's releases and verify its
+Developer ID signature before importing. The `StashVideo-BackgroundItems.mobileconfig` on each
+release pre-approves the app's background helper if you deploy it alongside.
+
 ### Windows
 
 Stash Video for Windows is a separate app with the same features. The Windows 1.9.3 installer
