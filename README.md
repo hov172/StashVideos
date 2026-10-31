@@ -90,7 +90,7 @@ autopkg run -v StashVideo.munki   # or StashVideo.jamf / StashVideo.intune
 ```
 
 They pull the same signed, notarized package from this repository's releases and verify its
-Developer ID signature before importing. The `StashVideo-BackgroundItems.mobileconfig` on each
+Developer ID signature before importing. The short `hov172/autopkg-recipes` form is all AutoPkg needs: it expands to `https://github.com/hov172/autopkg-recipes` on its own, and the repo is public, so no GitHub account is required. The `StashVideo-BackgroundItems.mobileconfig` on each
 release pre-approves the app's background helper if you deploy it alongside.
 
 ### Windows
