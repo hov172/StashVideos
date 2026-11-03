@@ -133,6 +133,13 @@ are not yet part of the checks. Please report anything that fails.
 repository, closes the app and runs the installer silently — expect one administrator prompt — and the new
 version reopens when it finishes. Running the downloaded Setup.exe yourself does the same thing.
 
+> **Running 1.9.5 or earlier on macOS? Install 1.9.6 before anything newer.** The next major
+> release moves the app to the bundle identifier `com.ayalasolutions.stashvideo`, and only 1.9.6 or
+> later teaches the self-service updater to accept an installer under that identity. On an older
+> copy **Install Update…** refuses the new release. Either update to 1.9.6 first and let it carry you
+> across, or download the new package from the release page and run it by hand (Homebrew users:
+> `brew upgrade --cask stash-video`). Settings, history and the sign-in session carry over either way.
+
 **On macOS**, **Install Update…** downloads the release's installer and installs it
 through the bundled Stash Video Updater, so a standard user can update without an administrator
 password. It needs a one-time setup: **Set Up Self-Service Updates…** registers the updater, and
