@@ -40,12 +40,22 @@ cask "stash-video" do
                        SH
                        sudo:       true,
                      },
-            pkgutil: "com.ayala.solutions.yt-dlp-gui-Macos.pkg",
+            pkgutil: [
+              "com.ayalasolutions.stashvideo.pkg",
+              "com.ayala.solutions.yt-dlp-gui-Macos.pkg",
+            ],
             delete:  "/Applications/Stash Video.app"
 
   zap trash: [
+    "~/Library/Application Support/com.ayalasolutions.stashvideo",
+    "~/Library/Caches/com.ayalasolutions.stashvideo",
+    "~/Library/HTTPStorages/com.ayalasolutions.stashvideo",
+    "~/Library/Preferences/com.ayalasolutions.stashvideo.plist",
+    "~/Library/WebKit/com.ayalasolutions.stashvideo",
     "~/Library/Application Support/com.ayala.solutions.yt-dlp-gui-Macos",
     "~/Library/Caches/com.ayala.solutions.yt-dlp-gui-Macos",
+    "~/Library/HTTPStorages/com.ayala.solutions.yt-dlp-gui-Macos",
     "~/Library/Preferences/com.ayala.solutions.yt-dlp-gui-Macos.plist",
+    "~/Library/WebKit/com.ayala.solutions.yt-dlp-gui-Macos",
   ]
 end
