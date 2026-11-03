@@ -3,6 +3,16 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [1.9.6] — 2026-11-03
+
+macOS only. The bridge release before the bundle identifier move.
+
+- **Updater ready for the new bundle identifier.** The next major release moves the app from
+  `com.ayala.solutions.yt-dlp-gui-Macos` to `com.ayalasolutions.stashvideo`. The self-service
+  updater now accepts the Stash Video installer under either identity (component and bundle
+  checked as a pair), so a copy on this release can update itself across the change. Install this
+  release first; earlier copies refuse an installer with the new identity and need a manual install.
+
 ## [1.9.5] — 2026-10-27
 
 macOS and Windows. LinkedIn Learning works again end to end: sign-in, thumbnail, and trim. The
