@@ -35,7 +35,7 @@ terms of service of the site it comes from. You are responsible for how you use 
 | Version | 14.0 or later | 10 version 2004 (build 19041) or later, including 11 |
 | Architecture | Apple Silicon or Intel — the app and every bundled tool are universal | x64 or arm64 — one installer, the native build is installed |
 | Disk | ~600 MB installed — the helper tools carry both architectures | ~340 MB download |
-| Signing | Developer ID signed and notarized | Not yet code-signed — see [Windows](#windows-test-build) |
+| Signing | Developer ID signed and notarized | Not yet code-signed — see [Windows](#windows) |
 
 Both apps bundle their own `yt-dlp`, `ffmpeg`, `ffprobe` and `deno`, so nothing else needs to be
 installed. On macOS the installer additionally links `yt-dlp`, `ffmpeg` and `ffprobe` into
@@ -48,8 +48,8 @@ existing Homebrew `ffmpeg` is left alone. The bundled uninstaller removes both t
 > source is not published. The in-app **Settings ▸ Updates** check on either platform reads this
 > repository's release feed.
 
-Every release carries the macOS package (`StashVideo-<version>-<date>.pkg`) and the Windows installer
-(`StashVideo-Setup-<version>.exe`). Verify downloads against the SHA-256 values in the release notes.
+Every release carries the macOS package (`StashVideo-<version>-<date>.pkg`); releases with a Windows build
+also carry the Windows installer (`StashVideo-Setup-<version>.exe`). Mac-only releases say so in their notes. Verify downloads against the SHA-256 values in the release notes.
 
 ### macOS
 
@@ -176,8 +176,8 @@ them. It looks where in-app updates land first (Application Support on macOS,
 `%LOCALAPPDATA%\StashVideo\bin` on Windows), then the bundled copies, then Homebrew and your `PATH` —
 so point it somewhere else only if you keep them elsewhere.
 
-macOS will not open a build it can't verify. For a locally built copy that is not an issue; for
-one downloaded from someone else, right-click ▸ Open the first time, or the app must be notarized.
+macOS will not open a build it can't verify. The release packages are notarized, so they open
+without a warning; a copy obtained some other way may need right-click ▸ Open the first time.
 
 ## Using it
 

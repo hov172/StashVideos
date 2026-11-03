@@ -116,7 +116,7 @@ Ported from Stash Video for Windows 1.9.2.
 - Sign-in cookies are remembered per site instead of for the whole session, so one portal sign-in
   no longer slows every later YouTube download; the bundled ffmpeg can verify TLS on trimmed HLS
   downloads; tests no longer write to the real download history.
-- Translated into all 13 languages.
+- Translated into all 14 languages.
 
 ## [1.8.0] — 2026-10-19
 
@@ -134,13 +134,13 @@ Ported from Stash Video for Windows 1.9.2.
   names the browser and the cause: cookie database not found, a Keychain "Safe Storage" prompt
   that needs *Always Allow*, Safari blocked by Full Disk Access, or not being signed in from a
   normal window on the default profile. The README lists what each browser needs.
-- Translated into all 13 languages.
+- Translated into all 14 languages.
 
 ## [1.7.4] — 2026-10-17
 
 - **Paste from Clipboard.** The empty state before the first analysis has a `Paste from
   Clipboard` button. It puts the clipboard text in the URL field and analyzes it, matching the
-  Windows app. An empty clipboard leaves the field as it is. Translated into all 13 languages.
+  Windows app. An empty clipboard leaves the field as it is. Translated into all 14 languages.
 
 ## [1.7.3] — 2026-10-14
 

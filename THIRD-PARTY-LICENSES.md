@@ -16,11 +16,15 @@ installed inside the app bundle at `Contents/Resources/licenses`.
 | [Deno](https://deno.com) | official release archives | MIT — [deno-MIT.txt](licenses/deno-MIT.txt) |
 
 **Exact versions are not listed here on purpose.** They changed once already and this file did
-not, which is how a licence notice starts describing software nobody ships. `build-installer.sh`
-writes `licenses/bundled-versions.txt` into every package, read from the binaries themselves at
+not, which is how a licence notice starts describing software nobody ships. The app's build (its
+source is not in this repository, nor are the `Scripts/` files named below) writes `licenses/bundled-versions.txt` into every package, read from the binaries themselves at
 build time — that file, inside the copy you have, is authoritative.
 
 All four are universal binaries (arm64 + x86_64).
+
+The Windows app ships its own builds of the same programs under `Assets\licenses` in
+`C:\Program Files\Stash Video`, and each Windows release attaches the exact FFmpeg source and build
+configuration it was made from (`ffmpeg-source-*.tar.gz`, `ffmpeg-build-config-windows.txt`).
 
 ## FFmpeg — GPL v3
 
