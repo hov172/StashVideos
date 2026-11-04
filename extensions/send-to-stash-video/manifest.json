@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Send to Stash Video",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Send the current page to Stash Video for analysis and download.",
   "permissions": [
     "activeTab"
