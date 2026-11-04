@@ -221,7 +221,7 @@ javascript:location.href='stashvideo://open?url='+encodeURIComponent(location.hr
 
 Chrome and Firefox users can instead load the toolbar extension in
 [`extensions/send-to-stash-video`](https://github.com/hov172/StashVideos/tree/main/extensions/send-to-stash-video).
-Safari users: use the bookmarklet for now (a Safari extension is planned).
+Safari users: use the bookmarklet for now; a built-in Safari extension ships with 2.0.0.
 
 ### Sign in inside the app, and pick the video from the page
 
@@ -329,7 +329,7 @@ the next time the app opens.
 | **Cookies** | Cookie policy (when to use them), **Sign in…** for the app's own sign-in window, the video password, and which browser to take cookies from (Chrome, Edge, Firefox, Brave, Vivaldi, Opera or Chromium) |
 | **Media** | Thumbnail saving/embedding, chapter and subtitle embedding, filename template, modified date, time range, temp folder, config file |
 | **Feeds** | Background checking on/off and how often |
-| **Browser** | Launch Chrome, Brave, Edge or Chromium (or any executable you pick) with an unpacked extension in an isolated, throwaway profile |
+| **Browser** | Launch Chrome, Brave, Edge or Chromium (or any executable you pick) with an unpacked extension in an isolated, throwaway profile Google Chrome 137 and later ignore `--load-extension`, so pick Brave, Edge or Chromium for this |
 | **Updates** | Check for a newer Stash Video release (also at every launch, with a banner) and install it — without an administrator password on macOS once self-service updates are set up, with one administrator prompt on Windows — and check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
 
 ## Troubleshooting
