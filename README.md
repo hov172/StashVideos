@@ -11,14 +11,15 @@ pick a quality, get a file — with a parallel download queue, container presets
 re-encoding, and feed subscriptions that download new uploads on their own. Both apps share the
 same features, settings and languages; the differences are listed where they matter below.
 
-## See it in action
+## Watch the promo
 
-Paste a link, pick a quality and let the queue do the rest. The tour below walks through a download
-from start to finished file.
+A 75-second look at what Stash Video does: analyze any link, pick a stream, trim, save audio only,
+queue four at a time, turn playlists into checklists, subscribe to channels, sign in where a site
+needs it, and let the app update itself.
 
 https://github.com/user-attachments/assets/9bd174e1-638d-4e52-a3f0-96a618e17741
 
-<p align="center"><sub>Stash Video on macOS. The Windows app shares the same workflow, settings and languages.</sub></p>
+<p align="center"><sub>Stash Video promo, by Ayala Solutions. Free for macOS and Windows.</sub></p>
 
 ## Content Owner Permission Required
 
