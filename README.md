@@ -21,6 +21,9 @@ https://github.com/user-attachments/assets/9bd174e1-638d-4e52-a3f0-96a618e17741
 
 <p align="center"><sub>Stash Video promo, by Ayala Solutions. Free for macOS and Windows.</sub></p>
 
+Not in the clip: the **Send to Stash Video** browser extension for Chrome and Firefox, which hands the
+page you are on straight to the app. See [Send a page from your browser](#send-a-page-from-your-browser).
+
 ## Content Owner Permission Required
 
 **Use Stash Video only to download your own videos, or videos whose owner has given you permission.**
