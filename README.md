@@ -11,7 +11,14 @@ pick a quality, get a file — with a parallel download queue, container presets
 re-encoding, and feed subscriptions that download new uploads on their own. Both apps share the
 same features, settings and languages; the differences are listed where they matter below.
 
+## See it in action
+
+Paste a link, pick a quality and let the queue do the rest. The tour below walks through a download
+from start to finished file.
+
 https://github.com/user-attachments/assets/9bd174e1-638d-4e52-a3f0-96a618e17741
+
+<p align="center"><sub>Stash Video on macOS. The Windows app shares the same workflow, settings and languages.</sub></p>
 
 ## Content Owner Permission Required
 
