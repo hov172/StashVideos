@@ -11,6 +11,8 @@ pick a quality, get a file — with a parallel download queue, container presets
 re-encoding, and feed subscriptions that download new uploads on their own. Both apps share the
 same features, settings and languages; the differences are listed where they matter below.
 
+https://github.com/user-attachments/assets/9bd174e1-638d-4e52-a3f0-96a618e17741
+
 ## Content Owner Permission Required
 
 **Use Stash Video only to download your own videos, or videos whose owner has given you permission.**
