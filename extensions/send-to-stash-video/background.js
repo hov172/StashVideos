@@ -10,3 +10,10 @@ chrome.action.onClicked.addListener(async (tab) => {
     setTimeout(() => chrome.tabs.remove(t.id).catch(() => {}), 1000);
   }
 });
+
+// First install: open the download page once, so nobody clicks the button without the app
+// (the browser gives no error when nothing handles stashvideo://).
+chrome.runtime.onInstalled.addListener(({ reason }) => {
+  if (reason !== "install") return;
+  chrome.tabs.create({ url: "https://github.com/hov172/StashVideos#send-a-page-from-your-browser" });
+});

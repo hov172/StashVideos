@@ -1,13 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Send to Stash Video",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Send the current page to Stash Video for analysis and download.",
   "permissions": [
     "activeTab"
   ],
   "action": {
-    "default_title": "Send to Stash Video"
+    "default_title": "Send this page to Stash Video (requires the Stash Video app)"
   },
   "background": {
     "service_worker": "background.js",
