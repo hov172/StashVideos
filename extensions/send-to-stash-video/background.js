@@ -2,6 +2,12 @@
 chrome.action.onClicked.addListener(async (tab) => {
   if (!tab.url || !/^https?:/i.test(tab.url)) return;
   const target = "stashvideo://open?url=" + encodeURIComponent(tab.url);
+  // Safari build only: the manifest grants nativeMessaging and the app extension opens the link,
+  // because Safari will not navigate a tab to a custom scheme.
+  if ((chrome.runtime.getManifest().permissions || []).includes("nativeMessaging")) {
+    await chrome.runtime.sendNativeMessage("app", { open: target });
+    return;
+  }
   try {
     await chrome.tabs.update(tab.id, { url: target });
   } catch (e) {

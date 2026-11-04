@@ -16,6 +16,11 @@ m=json.load(open('manifest.json'))
 c=json.loads(json.dumps(m)); c['background'].pop('scripts',None); c.pop('browser_specific_settings',None)
 f=json.loads(json.dumps(m)); f['background'].pop('service_worker',None)
 json.dump(c,open('dist/chrome/manifest.json','w'),indent=2); json.dump(f,open('dist/firefox/manifest.json','w'),indent=2)
+# Safari (private repo only): the appex opens the link itself, so it needs nativeMessaging.
+import os
+if os.path.isdir('../safari/Resources'):
+    s=json.loads(json.dumps(c)); s['permissions'].append('nativeMessaging')
+    json.dump(s,open('../safari/Resources/manifest.json','w'),indent=2); open('../safari/Resources/manifest.json','a').write('\n')
 PY
 for b in chrome firefox; do (cd dist/$b && zip -qrX "../send-to-stash-video-$b-$VERSION.zip" . -x '.DS_Store'); done
 python3 make-store-assets.py dist/store-assets
