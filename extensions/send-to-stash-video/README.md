@@ -6,6 +6,7 @@ in its field and starts analyzing it. Nothing is sent anywhere else; the extensi
 the `activeTab` permission and never reads page content.
 
 It is not in the Chrome Web Store or Firefox Add-ons yet, so it is loaded as an unpacked extension.
+Store submissions are prepared with `./package.sh`; see [STORE-LISTING.md](STORE-LISTING.md).
 
 ## Requirements
 
