@@ -3,6 +3,15 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [2.0.1] — 2026-11-06
+
+- **Fixes the update from 1.9.x.** macOS's installer never replaces an app whose bundle identifier
+  differs from the package's, so installing 2.0.0 over 1.9.6 (or 1.9.5) left the old app in
+  `/Applications` and put the new one in `/Applications/Stash Video.localized/`. The old copy then
+  kept offering the update. The installer now moves the new app into place, removes the old copy
+  and that leftover folder, and forgets the old package receipt. Updating to 2.0.1 from 1.9.6, or
+  from a Mac that already tried 2.0.0, repairs this in one step. 2.0.0 should not be installed.
+
 ## [2.0.0] — 2026-11-06
 
 - **New bundle identifier: `com.ayalasolutions.stashvideo`** (was `com.ayala.solutions.yt-dlp-gui-Macos`).
