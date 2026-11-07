@@ -21,7 +21,7 @@ up=$(curl -sS --proto '=https' -H "Authorization: JWT $(jwt)" -F "upload=@$ZIP" 
 uuid=$(echo "$up" | jq -r .uuid); [ -n "$uuid" ] && [ "$uuid" != null ] || { echo "upload was not accepted: $up"; exit 1; }
 echo "▶ Waiting for validation"
 for i in $(seq 1 30); do
-  st=$(curl -sS --fail -H "Authorization: JWT $(jwt)" "$api/addons/upload/$uuid/")
+  st=$(curl -sS --fail-with-body -H "Authorization: JWT $(jwt)" "$api/addons/upload/$uuid/")
   [ "$(echo "$st" | jq -r .processed)" = true ] && break; sleep 10
 done
 echo "$st" | jq -e '.valid == true' >/dev/null || { echo "validation failed:"; echo "$st" | jq .validation; exit 1; }
@@ -29,11 +29,11 @@ echo "$st" | jq -e '.valid == true' >/dev/null || { echo "validation failed:"; e
 notes="Unminified, no build step: background.js and manifest.json are the source. Chrome and Firefox zips are produced by package.sh in https://github.com/hov172/StashVideos/tree/main/extensions/send-to-stash-video"
 if curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: JWT $(jwt)" "$api/addons/addon/$SLUG/" | grep -q 200; then
   echo "▶ Add-on exists: creating a new version"
-  out=$(curl -sS --fail -H "Authorization: JWT $(jwt)" -F "upload=$uuid" -F "approval_notes=$notes" \
+  out=$(curl -sS --fail-with-body -H "Authorization: JWT $(jwt)" -F "upload=$uuid" -F "approval_notes=$notes" \
        -F "release_notes[en-US]=See CHANGELOG.md in the repository." "$api/addons/addon/$SLUG/versions/")
 else
   echo "▶ First submission: creating the add-on"
-  out=$(curl -sS --fail -H "Authorization: JWT $(jwt)" \
+  out=$(curl -sS --fail-with-body -H "Authorization: JWT $(jwt)" \
        -F "version[upload]=$uuid" -F "version[approval_notes]=$notes" -F "version[license]=MIT" \
        -F "slug=$SLUG" -F "categories[firefox][]=download-management" \
        -F "summary[en-US]=One-click handoff of the page you are on to the Stash Video app, which analyzes the link and offers every stream the site has for download." \
