@@ -211,23 +211,38 @@ without a warning; a copy obtained some other way may need right-click ▸ Open 
 
 ### Send a page from your browser
 
-Both apps register a `stashvideo://open?url=…` link, so a browser can hand Stash Video the page you are
-on. The no-install way works in every browser: add a bookmark with this as its URL and click it on any
-page (the first time, the browser asks whether to open Stash Video; allow it).
+**Send to Stash Video** is a one-button extension: open any video page, click the button in the
+browser's toolbar, and Stash Video opens with that link already filled in and analyzed. Pick a format
+and download. It needs Stash Video 2.0.1 or later installed on the same computer.
+
+| Browser | Install |
+| --- | --- |
+| Chrome, Brave, Edge, Vivaldi, Opera | [Chrome Web Store](https://chromewebstore.google.com/detail/bfdkgjjlkmfggabaemhmbjbolmoldbll), then pin the button from the puzzle-piece menu |
+| Firefox 142+ | [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/send-to-stash-video/) (listing under Mozilla review; until it is approved, load the folder below as a temporary add-on) |
+| Safari (macOS) | Built into the app. Open Safari ▸ Settings ▸ Extensions, turn on **Send to Stash Video**, and allow it on the sites you use |
+
+The extension only asks for the `activeTab` permission, never reads page content, and sends the
+address nowhere but to the app. The button does nothing on pages that are not `http` or `https`.
+
+**Your browser's sign-in comes along.** The button also tells the app which browser it came from, and
+the app uses that browser's cookies for that link, so a page you are signed in to in Chrome or Firefox
+analyzes without a second sign-in. The first time, macOS asks once for Keychain access to the browser's
+cookie store. The Settings ▸ Cookies choice is not changed, and a link pasted by hand still follows it.
+Safari's cookies are out of reach without Full Disk Access, so Safari falls back to the app's sign-in
+window, which stays signed in for next time.
+
+No extension: add a bookmark with this as its URL and click it on any page. The first time, the browser
+asks whether to open Stash Video; allow it.
 
 ```
 javascript:location.href='stashvideo://open?url='+encodeURIComponent(location.href)
 ```
 
-The link takes an optional `&browser=<name>` (chrome, firefox, edge, brave, vivaldi, opera, chromium,
-safari) naming the browser that sent it. Stash Video 2.0.0 and later then use that browser's cookies
-for the link, so a page you are signed in to there needs no second sign-in. The extension adds it for
-you. On Windows, Chrome and Edge keep their cookies out of reach (see Cookies above), so those two still
-use the sign-in window.
+Under the hood the link is `stashvideo://open?url=<page>&browser=<name>`; the extension source and
+store packaging live in `extensions/send-to-stash-video`.
 
-Chrome and Firefox users can instead load the toolbar extension in
-[`extensions/send-to-stash-video`](https://github.com/hov172/StashVideos/tree/main/extensions/send-to-stash-video).
-Safari users: use the bookmarklet for now; a built-in Safari extension ships with 2.0.0.
+On Windows, Chrome and Edge keep their cookies out of reach (see Cookies above), so those two still
+use the sign-in window; Firefox carries its sign-in over.
 
 ### Sign in inside the app, and pick the video from the page
 

@@ -6,7 +6,20 @@ in its field and starts analyzing it. Nothing is sent anywhere else; the extensi
 the `activeTab` permission and never reads page content.
 
 Install it from the [Chrome Web Store](https://chromewebstore.google.com/detail/bfdkgjjlkmfggabaemhmbjbolmoldbll)
-(also works in Brave, Edge and other Chromium browsers), or load it unpacked as described below.
+(also works in Brave, Edge and other Chromium browsers) or from
+[Firefox Add-ons](https://addons.mozilla.org/firefox/addon/send-to-stash-video/), or load it unpacked as
+described below. Safari users do not need this folder: the Safari version is built into Stash Video
+2.0.1 and later; turn it on in Safari ▸ Settings ▸ Extensions.
+
+## Use
+
+1. Open a video page.
+2. Click the **Send to Stash Video** toolbar button (in Chrome, pin it first from the puzzle-piece menu).
+3. Stash Video comes to the front with the link filled in and analyzed. Choose a format and download.
+
+The button tells the app which browser sent the link, and the app uses that browser's cookies for it, so
+a page you are signed in to in the browser needs no second sign-in in the app (macOS asks once for
+Keychain access to the browser's cookie store).
 Store submissions are prepared with `./package.sh`; see [STORE-LISTING.md](STORE-LISTING.md).
 
 From version 1.0.3 the link also names the browser it was sent from, and Stash Video 2.0.0 or later
