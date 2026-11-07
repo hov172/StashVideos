@@ -40,7 +40,7 @@ else
        -F "homepage[en-US]=https://github.com/hov172/StashVideos" -F "support_url[en-US]=https://github.com/hov172/StashVideos/issues" \
        "$api/addons/addon/")
 fi
-status=$(echo "$out" | tail -1); body=$(echo "$out" | sed '$d')
-case "$status" in "HTTP 2"*) ;; *) echo "AMO refused ($status):"; echo "$body" | jq . 2>/dev/null || echo "$body"; exit 1 ;; esac
+http_status=$(echo "$out" | tail -1); body=$(echo "$out" | sed '$d')
+case "$http_status" in "HTTP 2"*) ;; *) echo "AMO refused ($http_status):"; echo "$body" | jq . 2>/dev/null || echo "$body"; exit 1 ;; esac
 echo "$body" | jq '{id, slug, version: (.version // .current_version), url}' 2>/dev/null || echo "$body"
 echo "Done. Finish the listing text (description, screenshot) at https://addons.mozilla.org/developers/addon/$SLUG/edit"
