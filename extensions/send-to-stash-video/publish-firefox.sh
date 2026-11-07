@@ -33,12 +33,15 @@ if curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: JWT $(jwt)" "$api/
        -F "release_notes[en-US]=See CHANGELOG.md in the repository." "$api/addons/addon/$SLUG/versions/")
 else
   echo "▶ First submission: creating the add-on"
-  out=$(curl -sS -w "\nHTTP %{http_code}" -H "Authorization: JWT $(jwt)" \
-       -F "version[upload]=$uuid" -F "version[approval_notes]=$notes" -F "version[license]=MIT" \
-       -F "slug=$SLUG" -F "categories[firefox][]=download-management" \
-       -F "summary[en-US]=One-click handoff of the page you are on to the Stash Video app, which analyzes the link and offers every stream the site has for download." \
-       -F "homepage[en-US]=https://github.com/hov172/StashVideos" -F "support_url[en-US]=https://github.com/hov172/StashVideos/issues" \
-       "$api/addons/addon/")
+  # The create endpoint takes JSON; nested multipart fields (version[upload]) are not parsed.
+  payload=$(jq -n --arg uuid "$uuid" --arg notes "$notes" --arg slug "$SLUG" '{
+    version: {upload: $uuid, license: "MIT", approval_notes: $notes},
+    slug: $slug, categories: {firefox: ["download-management"]},
+    summary: {"en-US": "One-click handoff of the page you are on to the Stash Video app, which analyzes the link and offers every stream the site has for download."},
+    homepage: {"en-US": "https://github.com/hov172/StashVideos"},
+    support_url: {"en-US": "https://github.com/hov172/StashVideos/issues"}}')
+  out=$(curl -sS -w "\nHTTP %{http_code}" -H "Authorization: JWT $(jwt)" -H "Content-Type: application/json" \
+       --data "$payload" "$api/addons/addon/")
 fi
 http_status=$(echo "$out" | tail -1); body=$(echo "$out" | sed '$d')
 case "$http_status" in "HTTP 2"*) ;; *) echo "AMO refused ($http_status):"; echo "$body" | jq . 2>/dev/null || echo "$body"; exit 1 ;; esac
