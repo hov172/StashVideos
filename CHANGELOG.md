@@ -41,7 +41,7 @@ the minor number moves for new capability, the patch number for fixes.
   groups) must use the new identifier from this release on. The uninstaller, `Scripts/uninstall.sh`
   and the Homebrew cask clean up after both identifiers.
 
-macOS only; the Windows app remains 1.9.5.
+macOS only; the Windows app remains 1.9.6.
 
 ## [1.9.6] — 2026-11-03
 
