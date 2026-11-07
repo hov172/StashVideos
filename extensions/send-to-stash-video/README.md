@@ -5,8 +5,15 @@ A one-button toolbar extension for Chrome, Brave, Edge, Chromium and Firefox. Cl
 in its field and starts analyzing it. Nothing is sent anywhere else; the extension only asks for
 the `activeTab` permission and never reads page content.
 
-It is not in the Chrome Web Store or Firefox Add-ons yet, so it is loaded as an unpacked extension.
+Install it from the [Chrome Web Store](https://chromewebstore.google.com/detail/bfdkgjjlkmfggabaemhmbjbolmoldbll)
+(also works in Brave, Edge and other Chromium browsers), or load it unpacked as described below.
 Store submissions are prepared with `./package.sh`; see [STORE-LISTING.md](STORE-LISTING.md).
+
+From version 1.0.3 the link also names the browser it was sent from, and Stash Video 2.0.0 or later
+uses that browser's cookies for the page, so a site you are signed in to in the browser needs no
+second sign-in in the app. Nothing about the permissions changes: the browser name comes from the
+user agent, and the cookies are read by yt-dlp on your computer the same way the Settings › Cookies
+browser choice already works.
 
 ## Requirements
 

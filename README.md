@@ -219,6 +219,12 @@ page (the first time, the browser asks whether to open Stash Video; allow it).
 javascript:location.href='stashvideo://open?url='+encodeURIComponent(location.href)
 ```
 
+The link takes an optional `&browser=<name>` (chrome, firefox, edge, brave, vivaldi, opera, chromium,
+safari) naming the browser that sent it. Stash Video 2.0.0 and later then use that browser's cookies
+for the link, so a page you are signed in to there needs no second sign-in. The extension adds it for
+you. On Windows, Chrome and Edge keep their cookies out of reach (see Cookies above), so those two still
+use the sign-in window.
+
 Chrome and Firefox users can instead load the toolbar extension in
 [`extensions/send-to-stash-video`](https://github.com/hov172/StashVideos/tree/main/extensions/send-to-stash-video).
 Safari users: use the bookmarklet for now; a built-in Safari extension ships with 2.0.0.
