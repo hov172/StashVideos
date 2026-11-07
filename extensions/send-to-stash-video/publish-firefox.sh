@@ -29,16 +29,18 @@ echo "$st" | jq -e '.valid == true' >/dev/null || { echo "validation failed:"; e
 notes="Unminified, no build step: background.js and manifest.json are the source. Chrome and Firefox zips are produced by package.sh in https://github.com/hov172/StashVideos/tree/main/extensions/send-to-stash-video"
 if curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: JWT $(jwt)" "$api/addons/addon/$SLUG/" | grep -q 200; then
   echo "▶ Add-on exists: creating a new version"
-  out=$(curl -sS --fail-with-body -H "Authorization: JWT $(jwt)" -F "upload=$uuid" -F "approval_notes=$notes" \
+  out=$(curl -sS -w "\nHTTP %{http_code}" -H "Authorization: JWT $(jwt)" -F "upload=$uuid" -F "approval_notes=$notes" \
        -F "release_notes[en-US]=See CHANGELOG.md in the repository." "$api/addons/addon/$SLUG/versions/")
 else
   echo "▶ First submission: creating the add-on"
-  out=$(curl -sS --fail-with-body -H "Authorization: JWT $(jwt)" \
+  out=$(curl -sS -w "\nHTTP %{http_code}" -H "Authorization: JWT $(jwt)" \
        -F "version[upload]=$uuid" -F "version[approval_notes]=$notes" -F "version[license]=MIT" \
        -F "slug=$SLUG" -F "categories[firefox][]=download-management" \
        -F "summary[en-US]=One-click handoff of the page you are on to the Stash Video app, which analyzes the link and offers every stream the site has for download." \
        -F "homepage[en-US]=https://github.com/hov172/StashVideos" -F "support_url[en-US]=https://github.com/hov172/StashVideos/issues" \
        "$api/addons/addon/")
 fi
-echo "$out" | jq '{id, slug, version: (.version // .current_version), url}' 2>/dev/null || echo "$out"
+status=$(echo "$out" | tail -1); body=$(echo "$out" | sed '$d')
+case "$status" in "HTTP 2"*) ;; *) echo "AMO refused ($status):"; echo "$body" | jq . 2>/dev/null || echo "$body"; exit 1 ;; esac
+echo "$body" | jq '{id, slug, version: (.version // .current_version), url}' 2>/dev/null || echo "$body"
 echo "Done. Finish the listing text (description, screenshot) at https://addons.mozilla.org/developers/addon/$SLUG/edit"
