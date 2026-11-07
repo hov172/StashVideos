@@ -3,6 +3,37 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [2.0.0] — 2026-11-06
+
+- **New bundle identifier: `com.ayalasolutions.stashvideo`** (was `com.ayala.solutions.yt-dlp-gui-Macos`).
+  The installer package is now `com.ayalasolutions.stashvideo.pkg` and the uninstaller
+  `com.ayalasolutions.stashvideo.uninstaller`. The app keeps its name and location,
+  `/Applications/Stash Video.app`, so the new build replaces the old one in place.
+- **Your data comes along.** On first launch the app moves its Application Support folder
+  (settings, download history, cookies, updated yt-dlp), its sign-in session (WebKit and
+  HTTPStorages) and its preferences, including the app language, from the old identifier. Anything
+  already under the new identifier is left as is. macOS asks once more for privacy permissions
+  such as Automation for Safari; those cannot be carried across.
+- **Updater.** The launchd label `com.ayala.solutions.stashvideo.updater` is unchanged, so MDM
+  profiles that pre-approve it keep working. On a Mac without that profile an administrator may
+  have to approve Stash Video Updater again after the update. In-app updates to this release need
+  1.9.6 or later installed first.
+- **Safari extension.** The app now bundles **Send to Stash Video** for Safari: enable it once in
+  Safari ▸ Settings ▸ Extensions and its toolbar button hands the current page to the app. The same
+  extension is on the Chrome Web Store (1.0.3 in review) and headed to Firefox Add-ons, replacing
+  the unpacked-folder install.
+- **The extension carries its browser's sign-in.** A link sent from the toolbar button now names the
+  browser it came from (`stashvideo://open?url=…&browser=chrome`), and the app reads that browser's
+  cookies for that link instead of the source picked in Settings › Cookies. Pages you are signed in
+  to in Chrome or Firefox analyze without a second sign-in; the setting itself is unchanged, and a
+  link typed or pasted by hand still follows it. Needs extension 1.0.3. Safari's cookies stay out of
+  reach without Full Disk Access, so Safari still falls back to the sign-in window.
+- **MDM and packaging.** Detection by bundle identifier (Munki `installs`, Intune, Jamf smart
+  groups) must use the new identifier from this release on. The uninstaller, `Scripts/uninstall.sh`
+  and the Homebrew cask clean up after both identifiers.
+
+macOS only; the Windows app remains 1.9.5.
+
 ## [1.9.6] — 2026-11-03
 
 macOS only. The bridge release before the bundle identifier move.

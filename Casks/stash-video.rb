@@ -1,6 +1,6 @@
 cask "stash-video" do
-  version "1.9.6,20261103"
-  sha256 "fa52f5d3827be1ab64dabd5cdcf8923aa53615eafa6aee41573577db090703ab"
+  version "2.0.0,20261106"
+  sha256 "23db2abc6d0fb0cc625d1ebdc5749e42966f9fc822c0848f435d34f0c61224f6"
 
   url "https://github.com/hov172/StashVideos/releases/download/v#{version.csv.first}/StashVideo-#{version.csv.first}-#{version.csv.second}.pkg"
   name "Stash Video"
@@ -27,35 +27,35 @@ cask "stash-video" do
   # The installer links yt-dlp, ffmpeg and ffprobe into /usr/local/bin only when nothing is
   # there already; remove just the links that point into this app, never a user's own tools.
   uninstall script:  {
-                       executable: "/bin/sh",
-                       args:       ["-c", <<~SH.strip],
-                         for t in yt-dlp ffmpeg ffprobe; do
-                           l="/usr/local/bin/$t"
-                           [ -L "$l" ] || continue
-                           case "$(readlink "$l")" in
-                             *"/Stash Video.app/Contents/Resources/bin/"*) rm -f "$l" ;;
-                           esac
-                         done
-                         exit 0
-                       SH
-                       sudo:       true,
-                     },
+              executable: "/bin/sh",
+              args:       ["-c", <<~SH.strip],
+                for t in yt-dlp ffmpeg ffprobe; do
+                  l="/usr/local/bin/$t"
+                  [ -L "$l" ] || continue
+                  case "$(readlink "$l")" in
+                    *"/Stash Video.app/Contents/Resources/bin/"*) rm -f "$l" ;;
+                  esac
+                done
+                exit 0
+              SH
+              sudo:       true,
+            },
             pkgutil: [
-              "com.ayalasolutions.stashvideo.pkg",
               "com.ayala.solutions.yt-dlp-gui-Macos.pkg",
+              "com.ayalasolutions.stashvideo.pkg",
             ],
             delete:  "/Applications/Stash Video.app"
 
   zap trash: [
-    "~/Library/Application Support/com.ayalasolutions.stashvideo",
-    "~/Library/Caches/com.ayalasolutions.stashvideo",
-    "~/Library/HTTPStorages/com.ayalasolutions.stashvideo",
-    "~/Library/Preferences/com.ayalasolutions.stashvideo.plist",
-    "~/Library/WebKit/com.ayalasolutions.stashvideo",
     "~/Library/Application Support/com.ayala.solutions.yt-dlp-gui-Macos",
+    "~/Library/Application Support/com.ayalasolutions.stashvideo",
     "~/Library/Caches/com.ayala.solutions.yt-dlp-gui-Macos",
+    "~/Library/Caches/com.ayalasolutions.stashvideo",
     "~/Library/HTTPStorages/com.ayala.solutions.yt-dlp-gui-Macos",
+    "~/Library/HTTPStorages/com.ayalasolutions.stashvideo",
     "~/Library/Preferences/com.ayala.solutions.yt-dlp-gui-Macos.plist",
+    "~/Library/Preferences/com.ayalasolutions.stashvideo.plist",
     "~/Library/WebKit/com.ayala.solutions.yt-dlp-gui-Macos",
+    "~/Library/WebKit/com.ayalasolutions.stashvideo",
   ]
 end
