@@ -37,7 +37,7 @@ terms of service of the site it comes from. You are responsible for how you use 
 - The software is provided "as is", without warranty of any kind; see [LICENSE](LICENSE). Ayala
   Solutions is not liable for any misuse or for content obtained with it.
 
-**Current version: 2.0.1** (macOS build 33; the Windows app is 1.9.6). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
+**Current version: 2.0.1** (macOS build 33; Windows 2.0.1). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
 
 ---
 
@@ -108,13 +108,15 @@ release pre-approves the app's background helper if you deploy it alongside.
 
 ### Windows
 
-Stash Video for Windows is a separate app with the same features. The Windows 1.9.6 installer
-(`StashVideo-Setup-1.9.6.exe`) is on the
-[v1.9.6 release](https://github.com/hov172/StashVideos/releases/tag/v1.9.6) beside that version's
+Stash Video for Windows is a separate app with the same features. The Windows 2.0.1 installer
+(`StashVideo-Setup-2.0.1.exe`) is on the
+[v2.0.1 release](https://github.com/hov172/StashVideos/releases/tag/v2.0.1) beside that version's
 Mac package, with the 1.9.x features (sign-in window, pick the video from the page, send-to-app,
 visual trim with preview, inline video password, support reports, Sign in… in the toolbar's cookie
-menu and in the error message) and the 1.9.5 LinkedIn Learning fixes. Mac 1.9.6 is an updater-only
-release with no Windows counterpart. It installs over earlier versions in place. The installer is not yet
+menu and in the error message) and the 1.9.5 LinkedIn Learning fixes. From 2.0.1 its update check
+offers only releases that carry a Windows installer, so a Mac-only release no longer shows as an
+update. The Mac 2.0.x changes (bundle identifier, Safari extension) do not apply to Windows. It
+installs over earlier versions in place. The installer is not yet
 code-signed, so SmartScreen warns about it; no certificate import is needed. Verify the download
 against `SHA256SUMS-<version>-windows.txt` on the release.
 

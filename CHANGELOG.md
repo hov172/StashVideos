@@ -12,6 +12,11 @@ the minor number moves for new capability, the patch number for fixes.
   and that leftover folder, and forgets the old package receipt. Updating to 2.0.1 from 1.9.6, or
   from a Mac that already tried 2.0.0, repairs this in one step. 2.0.0 should not be installed.
 
+**Windows 2.0.1:** the update check offers only releases that carry a Windows installer, so a
+Mac-only release no longer shows as an update that cannot install; the empty-state title and update
+banner are lighter, matching the Mac app; ffmpeg moves to n9.0.2-39. The Mac changes above do not
+apply to Windows.
+
 ## [2.0.0] — 2026-11-06
 
 - **New bundle identifier: `com.ayalasolutions.stashvideo`** (was `com.ayala.solutions.yt-dlp-gui-Macos`).
@@ -45,7 +50,8 @@ macOS only; the Windows app remains 1.9.6.
 
 ## [1.9.6] — 2026-11-03
 
-macOS only. The bridge release before the bundle identifier move.
+The bridge release before the bundle identifier move. Windows 1.9.6 (added 2026-11-05) only keeps
+the Windows version in step; nothing changes on Windows.
 
 - **Updater ready for the new bundle identifier.** The next major release moves the app from
   `com.ayala.solutions.yt-dlp-gui-Macos` to `com.ayalasolutions.stashvideo`. The self-service
