@@ -1,4 +1,4 @@
-<img src="docs/assets/ayala-solutions-mark.png" alt="Ayala Solutions" height="56" align="left">
+<img src="docs/assets/app-icon.png" alt="Stash Video" height="64" align="left">
 
 # Stash Video
 
