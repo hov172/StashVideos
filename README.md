@@ -37,7 +37,7 @@ terms of service of the site it comes from. You are responsible for how you use 
 - The software is provided "as is", without warranty of any kind; see [LICENSE](LICENSE). Ayala
   Solutions is not liable for any misuse or for content obtained with it.
 
-**Current version: 2.0.1** (macOS build 33; Windows 2.0.1). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
+**Current version: 2.0.2** (macOS build 34; Windows 2.0.1). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
 
 ---
 
@@ -230,8 +230,10 @@ address nowhere but to the app. The button does nothing on pages that are not `h
 the app uses that browser's cookies for that link, so a page you are signed in to in Chrome or Firefox
 analyzes without a second sign-in. The first time, macOS asks once for Keychain access to the browser's
 cookie store. The Settings ▸ Cookies choice is not changed, and a link pasted by hand still follows it.
-Safari's cookies are out of reach without Full Disk Access, so Safari falls back to the app's sign-in
-window, which stays signed in for next time.
+For Safari the app exports its cookies with one request to the site first, since Safari keeps session
+cookies in memory only. Safari's store is hidden from other apps until you add Stash Video under System
+Settings ▸ Privacy & Security ▸ Full Disk Access; the error message offers an **Open Full Disk Access…**
+button that takes you there. Without it, Safari falls back to the app's sign-in window.
 
 No extension: add a bookmark with this as its URL and click it on any page. The first time, the browser
 asks whether to open Stash Video; allow it.

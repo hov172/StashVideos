@@ -3,6 +3,25 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [2.0.2] — 2026-11-08
+
+Safari hand-offs sign in properly, and the app points at Full Disk Access when it needs it.
+
+- **Fixed: a page sent from Safari still asked for sign-in.** Safari keeps session cookies in memory
+  only, so reading its cookie store never found the one some sites need next to the saved login
+  (LinkedIn Learning's CSRF token, for instance), and the app answered "sign-in cookies from Safari
+  didn't resolve the error". A link sent from Safari now exports Safari's cookies with one request to
+  the site, which hands out fresh session cookies beside the saved login, and analyzes with that file.
+  LinkedIn Learning lessons sent from Safari analyze without a second sign-in. Chrome, Firefox and
+  the other browsers are unchanged, and the extensions need no update.
+- **Full Disk Access, explained and one click away.** Without Full Disk Access macOS hides Safari's
+  cookie store and the app used to say "make sure Safari is installed". It now says macOS blocked
+  access and shows an **Open Full Disk Access…** button that opens System Settings on that list.
+  Add Stash Video there, then send the link again.
+
+**Windows:** there is no Windows build for 2.0.2; the Windows app stays on 2.0.1. Both changes above are
+about Safari and macOS Full Disk Access, which do not exist on Windows.
+
 ## [2.0.1] — 2026-11-06
 
 - **Fixes the update from 1.9.x.** macOS's installer never replaces an app whose bundle identifier
