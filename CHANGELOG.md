@@ -19,8 +19,8 @@ Safari hand-offs sign in properly, and the app points at Full Disk Access when i
   access and shows an **Open Full Disk Access…** button that opens System Settings on that list.
   Add Stash Video there, then send the link again.
 
-**Windows:** there is no Windows build for 2.0.2; the Windows app stays on 2.0.1. Both changes above are
-about Safari and macOS Full Disk Access, which do not exist on Windows.
+**Windows 2.0.2:** nothing changes on Windows; this build keeps the Windows version in step with the Mac
+release. Both changes above are about Safari and macOS Full Disk Access, which do not exist on Windows.
 
 ## [2.0.1] — 2026-11-06
 
