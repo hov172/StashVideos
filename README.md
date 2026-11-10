@@ -231,7 +231,7 @@ and download. It needs Stash Video 2.0.1 or later installed on the same computer
 | Browser | Install |
 | --- | --- |
 | Chrome, Brave, Edge, Vivaldi, Opera | [Chrome Web Store](https://chromewebstore.google.com/detail/bfdkgjjlkmfggabaemhmbjbolmoldbll), then pin the button from the puzzle-piece menu |
-| Firefox 142+ | [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/send-to-stash-video/) (listing under Mozilla review; until it is approved, load the folder below as a temporary add-on) |
+| Firefox 142+ | [Firefox Add-ons](https://addons.mozilla.org/addon/send-to-stash-video/) |
 | Safari (macOS) | Built into the app. Open Safari ▸ Settings ▸ Extensions, turn on **Send to Stash Video**, and allow it on the sites you use |
 
 The extension only asks for the `activeTab` permission, never reads page content, and sends the
