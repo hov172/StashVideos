@@ -122,12 +122,11 @@ release pre-approves the app's background helper if you deploy it alongside.
 Stash Video for Windows is a separate app with the same features. The Windows 2.2.0 installer
 (`StashVideo-Setup-2.2.0.exe`) is on the
 [v2.2.0 release](https://github.com/hov172/StashVideos/releases/tag/v2.2.0) beside that version's
-Mac package, with the 1.9.x features (sign-in window, pick the video from the page, send-to-app,
-visual trim with preview, inline video password, support reports, Sign in… in the toolbar's cookie
-menu and in the error message) and the 1.9.5 LinkedIn Learning fixes. From 2.0.1 its update check
-offers only releases that carry a Windows installer, so a Mac-only release no longer shows as an
-update. The Mac 2.0.x changes (bundle identifier, Safari extension) do not apply to Windows. It
-installs over earlier versions in place. The installer is not yet
+Mac package. Windows 2.2.0 matches the Mac app feature for feature, and like the Mac app it no
+longer has the unpacked-extension launcher: Settings ▸ Browser links to the store extensions
+instead. From 2.0.1 its update check offers only releases that carry a Windows installer, so a
+Mac-only release no longer shows as an update. The Mac 2.0.x changes (bundle identifier, Safari
+extension) do not apply to Windows. It installs over earlier versions in place. The installer is not yet
 code-signed, so SmartScreen warns about it; no certificate import is needed. Verify the download
 against `SHA256SUMS-<version>-windows.txt` on the release.
 
@@ -226,13 +225,14 @@ without a warning; a copy obtained some other way may need right-click ▸ Open 
 
 **Send to Stash Video** is a one-button extension: open any video page, click the button in the
 browser's toolbar, and Stash Video opens with that link already filled in and analyzed. Pick a format
-and download. It needs Stash Video 2.0.1 or later installed on the same computer.
+and download. It needs Stash Video 1.9.0 or later installed on the same computer; 2.0.1 or later
+carries the browser's sign-in over and includes the built-in Safari extension.
 Settings ▸ Browser links to the listings on both platforms; on macOS it also shows whether the Safari copy is turned on.
 
 | Browser | Install |
 | --- | --- |
 | Chrome, Brave, Edge, Vivaldi, Opera | [Chrome Web Store](https://chromewebstore.google.com/detail/bfdkgjjlkmfggabaemhmbjbolmoldbll), then pin the button from the puzzle-piece menu |
-| Firefox 142+ | [Firefox Add-ons](https://addons.mozilla.org/addon/send-to-stash-video/) |
+| Firefox 142+ | [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/send-to-stash-video/) |
 | Safari (macOS) | Built into the app. Open Safari ▸ Settings ▸ Extensions, turn on **Send to Stash Video**, and allow it on the sites you use |
 
 The extension only asks for the `activeTab` permission, never reads page content, and sends the
@@ -257,7 +257,7 @@ javascript:location.href='stashvideo://open?url='+encodeURIComponent(location.hr
 Under the hood the link is `stashvideo://open?url=<page>&browser=<name>`; the extension source and
 store packaging live in `extensions/send-to-stash-video`.
 
-On Windows, Chrome and Edge keep their cookies out of reach (see Cookies above), so those two still
+On Windows, Chrome and Edge keep their cookies out of reach (see [Troubleshooting](#troubleshooting)), so those two still
 use the sign-in window; Firefox carries its sign-in over.
 
 ### Sign in inside the app, and pick the video from the page
@@ -366,7 +366,7 @@ the next time the app opens.
 | **Cookies** | Cookie policy (when to use them), **Sign in…** for the app's own sign-in window, the video password, and which browser to take cookies from (Chrome, Edge, Firefox, Brave, Vivaldi, Opera or Chromium) |
 | **Media** | Thumbnail saving/embedding, chapter and subtitle embedding, filename template, modified date, time range, temp folder, config file |
 | **Feeds** | Background checking on/off and how often |
-| **Browser** | Launch Chrome, Brave, Edge or Chromium (or any executable you pick) with an unpacked extension in an isolated, throwaway profile Google Chrome 137 and later ignore `--load-extension`, so pick Brave, Edge or Chromium for this |
+| **Browser** | Links to **Send to Stash Video** on the Chrome Web Store (Chrome, Brave, Edge, Vivaldi, Opera) and Firefox Add-ons (Firefox 142 or later); on macOS a Safari row shows whether the built-in extension is On or Off, and **Enable in Safari…** opens Safari's Extensions settings |
 | **Updates** | Check for a newer Stash Video release (also at every launch, with a banner) and install it — without an administrator password on macOS once self-service updates are set up, with one administrator prompt on Windows — and check for and install newer `yt-dlp`, verified against `SHA2-256SUMS` |
 
 ## Troubleshooting

@@ -22,7 +22,9 @@ analyzed. Pick a format and download. No copying, no pasting, no switching apps.
 It replaces the copy-link, switch-app, paste, Analyze routine with a single click.
 
 Requires Stash Video 1.9.0 or later, free from https://github.com/hov172/StashVideos/releases.
-The button does nothing on pages that are not http or https.
+From 1.0.3 the link also tells Stash Video which browser sent it, so pages you are signed in to
+need no second sign-in (Stash Video 2.0.1 or later). The button does nothing on pages that are
+not http or https.
 
 Use Stash Video only to download your own videos, or videos whose owner has given you permission.
 
@@ -77,14 +79,15 @@ Issues: https://github.com/hov172/StashVideos/issues
 
 ## Firefox submission notes
 
-- Submit through https://addons.mozilla.org/developers/ with the Firefox zip. "On this site"
-  gives a public listing; "On your own" signs it for self-distribution and returns a `.xpi` to
-  attach to a GitHub release.
+- Listed on AMO as `send-to-stash-video` (https://addons.mozilla.org/firefox/addon/send-to-stash-video/).
+  New versions: `AMO_JWT_ISSUER=… AMO_JWT_SECRET=… ./publish-firefox.sh` (see its header), or upload the
+  Firefox zip by hand at https://addons.mozilla.org/developers/.
 - The manifest already declares `data_collection_permissions: none`, which AMO requires.
 - Lint before upload: `npx addons-linter dist/send-to-stash-video-firefox-<v>.zip`.
 
 ## Chrome Web Store submission notes
 
-- https://chrome.google.com/webstore/devconsole — one-time developer registration fee.
-- Upload the Chrome zip, fill the fields above, set visibility Public, submit for review.
+- Listed as item `bfdkgjjlkmfggabaemhmbjbolmoldbll` (https://chromewebstore.google.com/detail/bfdkgjjlkmfggabaemhmbjbolmoldbll).
+  New versions: upload the Chrome zip to the same item at https://chrome.google.com/webstore/devconsole
+  and submit for review; the listing fields above stay as they are.
 - The same zip is accepted by Microsoft Partner Center for Edge Add-ons.

@@ -1,4 +1,4 @@
-FFmpeg build configuration of the binary shipped with Stash Video 1.9.6 (unchanged since 1.9.2)
+FFmpeg build configuration of the binary shipped with Stash Video 2.2.0
 Reported by: ffmpeg -version
 
 ffmpeg version 9.0.1-https://www.martin-riedl.de Copyright (c) 2000-2026 the FFmpeg developers

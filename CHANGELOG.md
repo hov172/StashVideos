@@ -12,6 +12,8 @@ The unpacked-extension launcher is retired on both platforms.
   profile with `--load-extension` is removed on both platforms. The store extension and the Safari appex
   replaced it; Google Chrome 137 and later ignored `--load-extension` anyway. Old config files still load;
   the four retired keys are ignored.
+- **Windows 2.2.0:** the same removal; Settings ▸ Browser keeps only the Browser Extension section and
+  the toolbar extension button is gone. Bundled tools unchanged from 2.1.0. Windows skipped 2.1.0.
 
 ## [2.1.0] — 2026-11-10
 

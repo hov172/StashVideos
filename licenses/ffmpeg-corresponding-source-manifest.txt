@@ -2,7 +2,7 @@ FFmpeg corresponding-source audit for Stash Video
 
 Binary audited: FFmpeg 9.0.1 from the Martin Riedl macOS release build,
 downloaded from the architecture-specific URLs in
-Scripts/helper-binaries.lock.json. The arm64 and x86_64 binaries report the
+the build's helper lock file. The arm64 and x86_64 binaries report the
 same configure options; both are statically linked builds.
 
 Configure options reported by `ffmpeg -buildconf`:

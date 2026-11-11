@@ -73,7 +73,7 @@ used by the publisher. The base FFmpeg tarball alone may not be sufficient for t
   must be obtained from the listed upstream projects or the publisher's written source offer
   before redistributing a release as a complete corresponding-source bundle.
 - **Attached to the GitHub release** as well, for anyone who wants the source without
-  installing anything. `Scripts/fetch-ffmpeg-source.sh` fetches the tarball matching the
+  installing anything. The app's build script fetches the tarball matching the
   built binary.
 - Upstream: <https://ffmpeg.org/releases/> and <https://git.ffmpeg.org/ffmpeg.git>
   (tag `n<version>`)
@@ -99,8 +99,8 @@ package carries the complete upstream `THIRD_PARTY_LICENSES.txt` as
 `licenses/yt-dlp-THIRD_PARTY_LICENSES.txt`; it must remain with the executable. See the
 [upstream licensing explanation](https://github.com/yt-dlp/yt-dlp/blob/2026.08.19/README.md#licensing).
 
-The executable is verified against the pinned publisher SHA-256 digest at fetch time (see
-`Scripts/helper-binaries.lock.json`).
+The executable is verified against the pinned publisher SHA-256 digest at fetch time (the
+build's lock file pins it).
 
 Stash Video re-signs it with `com.apple.security.cs.disable-library-validation`
 so macOS's hardened runtime will let it load the Python framework it unpacks at
