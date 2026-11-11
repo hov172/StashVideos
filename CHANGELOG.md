@@ -3,6 +3,14 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [Unreleased]
+
+- **The unpacked-extension launcher is gone, on macOS and Windows.** Settings ▸ Browser no longer has the
+  Chromium Browser and Extension Launch sections, and the toolbar button that launched a separate Chromium
+  profile with `--load-extension` is removed on both platforms. The store extension and the Safari appex
+  replaced it; Google Chrome 137 and later ignored `--load-extension` anyway. Old config files still load;
+  the four retired keys are ignored.
+
 ## [2.1.0] — 2026-11-10
 
 The app shows you where to get the browser extension.
