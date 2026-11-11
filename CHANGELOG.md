@@ -3,6 +3,19 @@
 All notable changes to Stash Video. Versions follow [semantic versioning](https://semver.org):
 the minor number moves for new capability, the patch number for fixes.
 
+## [2.1.0] — 2026-11-10
+
+The app shows you where to get the browser extension.
+
+- **Settings ▸ Browser points at the browser extension.** A new Browser Extension section links to
+  Send to Stash Video on the Chrome Web Store and Firefox Add-ons, and an Enable in Safari… button
+  opens Safari's Extensions settings on the built-in copy; the Safari row also shows whether the
+  extension is On or Off. Translated for all 13 languages.
+- **Full Disk Access advice covers macOS 27.3.** Starting with macOS 27.3 the system no longer adds an
+  app it denied automatically to the Full Disk Access list, so "flip the toggle" stops being enough.
+  The Safari cookie advice now also says to click + and choose Stash Video from Applications when it
+  isn't listed, which works on every macOS version.
+
 ## [2.0.2] — 2026-11-08
 
 Safari hand-offs sign in properly, and the app points at Full Disk Access when it needs it.
