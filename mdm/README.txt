@@ -1,8 +1,9 @@
 Stash Video MDM profile
 
 StashVideo-BackgroundItems.mobileconfig pre-approves the Stash Video Updater daemon
-on macOS 13 and later through a Service Management (com.apple.servicemanagement)
-payload. Its single rule matches the launchd label com.ayala.solutions.stashvideo.updater,
+through a Service Management (com.apple.servicemanagement) payload. Stash Video
+requires macOS 14 or later, so that is the profile's floor too; the payload type itself
+exists since macOS 13. Its single rule matches the launchd label com.ayala.solutions.stashvideo.updater,
 so it covers only the updater and nothing else signed by the same team.
 
 Import the file into your MDM as-is and scope it to the Stash Video Macs at the device
