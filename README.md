@@ -227,6 +227,7 @@ without a warning; a copy obtained some other way may need right-click ▸ Open 
 **Send to Stash Video** is a one-button extension: open any video page, click the button in the
 browser's toolbar, and Stash Video opens with that link already filled in and analyzed. Pick a format
 and download. It needs Stash Video 2.0.1 or later installed on the same computer.
+Settings ▸ Browser links to the listings on both platforms; on macOS it also shows whether the Safari copy is turned on.
 
 | Browser | Install |
 | --- | --- |
