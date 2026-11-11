@@ -48,7 +48,7 @@ terms of service of the site it comes from. You are responsible for how you use 
 - The software is provided "as is", without warranty of any kind; see [LICENSE](LICENSE). Ayala
   Solutions is not liable for any misuse or for content obtained with it.
 
-**Current version: 2.1.0** (macOS build 35; Windows 2.0.2). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
+**Current version: 2.1.0** (macOS build 35; Windows 2.1.0). See the [latest release](https://github.com/hov172/StashVideos/releases/latest) and the [changelog](CHANGELOG.md).
 
 ---
 
@@ -119,9 +119,9 @@ release pre-approves the app's background helper if you deploy it alongside.
 
 ### Windows
 
-Stash Video for Windows is a separate app with the same features. The Windows 2.0.2 installer
-(`StashVideo-Setup-2.0.2.exe`) is on the
-[v2.0.2 release](https://github.com/hov172/StashVideos/releases/tag/v2.0.2) beside that version's
+Stash Video for Windows is a separate app with the same features. The Windows 2.1.0 installer
+(`StashVideo-Setup-2.1.0.exe`) is on the
+[v2.1.0 release](https://github.com/hov172/StashVideos/releases/tag/v2.1.0) beside that version's
 Mac package, with the 1.9.x features (sign-in window, pick the video from the page, send-to-app,
 visual trim with preview, inline video password, support reports, Sign in… in the toolbar's cookie
 menu and in the error message) and the 1.9.5 LinkedIn Learning fixes. From 2.0.1 its update check
